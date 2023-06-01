@@ -1,0 +1,100 @@
+[
+    {
+        "cardName": "Cruzcous",
+        "cardHealth": "1",
+        "cardAttack": "1",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "L-Evan-ed Bread",
+        "cardHealth": "1",
+        "cardAttack": "2",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Gochuchung",
+        "cardHealth": "2",
+        "cardAttack": "1",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "SpaJeddi",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Chicken Nguyengs",
+        "cardHealth": "2",
+        "cardAttack": "3",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Mashed Votatoes",
+        "cardHealth": "2",
+        "cardAttack": "3",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Manuelita Pizza",
+        "cardHealth": "2",
+        "cardAttack": "4",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "PB & James",
+        "cardHealth": "2",
+        "cardAttack": "4",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Jerome Stick",
+        "cardHealth": "1",
+        "cardAttack": "5",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Baked Kyle Chips",
+        "cardHealth": "5",
+        "cardAttack": "1",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Salt",
+        "cardHealth": "1",
+        "cardAttack": "1",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "spice"
+    },
+    {
+        "cardName": "Pepper",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "spice"
+    },
+    {
+        "cardName": "Paprika",
+        "cardHealth": "3",
+        "cardAttack": "3",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "spice"
+    },
+    {
+        "cardName": "Saffron",
+        "cardHealth": "5",
+        "cardAttack": "5",
+        "cardImage": "https://fakeimg.pl/100x100",
+        "cardType": "spice"
+    }
+]
