@@ -6,10 +6,10 @@ const userData = require('./userSeedData.json')
 db.once('open', async () => {
     try {
       await User.deleteMany({});
-      await User.create(cardData);
+      await User.create(userData);
       
       await Cards.deleteMany({});
-      await Cards.create(userData);
+      await Cards.create(cardData);
 
       console.log('all done!');
       process.exit(0);
