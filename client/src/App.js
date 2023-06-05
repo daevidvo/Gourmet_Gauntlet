@@ -41,6 +41,30 @@ function App() {
       <Router>
         <div>
           <Header />
+          <Route 
+            path='/'
+            element={<Home/>}
+          />
+          <Route 
+            path='/battle'
+            element={<Battle/>}
+          />
+          <Route 
+            path='/login'
+            element={<Login/>}
+          />
+          <Route 
+            path='/profile'
+            element={<Profile/>}
+          />
+          <Route 
+            path='/signup'
+            element={<SignUp/>}
+          />
+          <Route 
+            path='/about-us'
+            element={<AboutUs/>}
+          />
           <Footer />
         </div>
       </Router>
