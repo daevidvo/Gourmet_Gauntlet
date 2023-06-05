@@ -10,17 +10,26 @@ const typeDefs = gql`
 
     type Game {
         _id: ID!
-        userStage: Number!
+        userStage: Int!
         userId: ID!
-        userHealth: Number!
+        userHealth: Int!
         userCards: [GameCards]
     }
 
     type GameCards {
         _id: ID!
         cardName: String!
-        cardHealth: Number!
-        cardAttack: Number!
+        cardHealth: Int!
+        cardAttack: Int!
+        cardImage: String!
+        cardType: String!
+    }
+
+    input inputGameCards {
+        _id: ID!
+        cardName: String!
+        cardHealth: Int!
+        cardAttack: Int!
         cardImage: String!
         cardType: String!
     }
@@ -28,8 +37,8 @@ const typeDefs = gql`
     type Card {
         _id: ID!
         cardName: String!
-        cardHealth: Number!
-        cardAttack: Number!
+        cardHealth: Int!
+        cardAttack: Int!
         cardImage: String!
         cardType: String!
     }
@@ -48,7 +57,7 @@ const typeDefs = gql`
     type Mutation {
         login(email: String!, password: String!): Auth
         signUp(username: String!, email: String!, password: String!): Auth
-        setGameProgress(userId: ID!, userStage: Number, userHealth: Number, userCards: [GameCards]): Game
+        setGameProgress(userId: ID!, userStage: Int, userHealth: Int, userCards: [inputGameCards]): Game
     }
     `;
 
