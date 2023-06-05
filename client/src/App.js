@@ -1,31 +1,39 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
-import 'bulma/css/bulma.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import "bulma/css/bulma.css";
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Profile from './pages/Profile';
-import AboutUs from './pages/about-us';
-import SignUp from './pages/Signup';
-import Battle from './pages/Battle';
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import AboutUs from "./pages/about-us";
+import SignUp from "./pages/Signup";
+import Battle from "./pages/Battle";
 
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
-const httpLink = createHttpLink({ uri: '/graphql', });
-
-
+const httpLink = createHttpLink({ uri: "http://localhost:3001/graphql" });
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   // return the headers to the context so httpLink can read them
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -42,26 +50,17 @@ function App() {
         <div>
           <Header />
           <Routes>
-            <Route 
-                path='/'
-                element={<Home/>}
-            />
+            <Route path="/" element={<Home />} />
             {/* <Route 
                 path='/battle'
                 element={<Battle/>}
             /> */}
-            <Route 
-                path='/login'
-                element={<Login/>}
-            />
+            <Route path="/login" element={<Login />} />
             {/* <Route 
                 path='/profile'
                 element={<Profile/>}
             /> */}
-            <Route 
-                path='/signup'
-                element={<SignUp/>}
-            />
+            <Route path="/signup" element={<SignUp />} />
             {/* <Route 
                 path='/about-us'
                 element={<AboutUs/>}

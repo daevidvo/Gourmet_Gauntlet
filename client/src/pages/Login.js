@@ -1,46 +1,46 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
 const Login = () => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        console.log(formState);
-        try {
-            const { data } = await login({
-                variables: { ...formState },
-            });
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
 
-            console.log(data);
+      console.log(data);
 
-            Auth.login(data.login.token);
-        } catch (e) {
-            console.error(e);
-        }
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
 
-        setFormState({
-            email: '',
-            password: '',
-        });
-    };
+    setFormState({
+      email: "",
+      password: "",
+    });
+  };
 
-    return (
-        <section className="section">
+  return (
+    <section className="section">
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-8">
@@ -51,7 +51,7 @@ const Login = () => {
               <div className="card-content">
                 {data ? (
                   <p>
-                    Success! You may now head{' '}
+                    Success! You may now head{" "}
                     <Link to="/">back to the homepage.</Link>
                   </p>
                 ) : (
@@ -86,7 +86,7 @@ const Login = () => {
                       <div className="control">
                         <button
                           className="button is-info is-fullwidth"
-                          style={{ cursor: 'pointer' }}
+                          style={{ cursor: "pointer" }}
                           type="submit"
                         >
                           Submit
@@ -97,9 +97,7 @@ const Login = () => {
                 )}
 
                 {error && (
-                  <div className="notification is-danger">
-                    {error.message}
-                  </div>
+                  <div className="notification is-danger">{error.message}</div>
                 )}
               </div>
             </div>
@@ -109,5 +107,5 @@ const Login = () => {
     </section>
   );
 };
-    
+
 export default Login;
