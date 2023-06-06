@@ -67,7 +67,7 @@ const Battle =  () => {
 
 
 return (
-    <div className="is-flex">
+    <div className="is-flex" id="battle">
         {randArray.map((cardData) => <Card {...cardData} />)}
     </div>
 )
