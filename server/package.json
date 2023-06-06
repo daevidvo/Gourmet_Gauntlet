@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animejs": "^3.2.1",
     "apollo-server-express": "^3.6.2",
     "bcrypt": "^5.0.0",
     "dotenv": "^8.6.0",
