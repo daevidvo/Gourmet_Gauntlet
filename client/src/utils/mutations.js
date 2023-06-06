@@ -27,6 +27,7 @@ export const SIGNUP_USER = gql`
 export const SET_GAME_STAGE = gql`
   mutation setGameStage(
     $userStage: Number
+    $userId: ID!
   ) {
     setGameStage(
       userStage: $userStage
@@ -39,6 +40,7 @@ export const SET_GAME_STAGE = gql`
 export const SET_GAME_HEALTH = gql`
   mutation setGameHealth(
     $userHealth: Number
+    $userId: ID!
   ) {
     setGameHealth(
       userHealth: $userHealth
@@ -51,6 +53,7 @@ export const SET_GAME_HEALTH = gql`
 export const SET_GAME_CARDS = gql`
   mutation setGameCards(
     $userCards: [GameCards]
+    $userId: ID!
   ) {
     setGameCards(
       userCards: $userCards
