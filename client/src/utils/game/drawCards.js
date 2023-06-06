@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 const allCards = () => {
     return fetch(`/api/cards`, {
@@ -6,7 +6,7 @@ const allCards = () => {
     });
 }
 
-export default drawCards = async () => {
+export default async function drawCards() {
   const cardsArray = await allCards();
 
   let handArr = [];
