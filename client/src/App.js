@@ -17,7 +17,7 @@ import "bulma/css/bulma.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import AboutUs from "./pages/about-us";
+import AboutUs from "./pages/AboutUs";
 import SignUp from "./pages/Signup";
 import Battle from "./pages/Battle";
 
@@ -51,10 +51,10 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route 
+            <Route 
                 path='/battle'
                 element={<Battle/>}
-            /> */}
+            />
             <Route path="/login" element={<Login />} />
             {/* <Route 
                 path='/profile'
