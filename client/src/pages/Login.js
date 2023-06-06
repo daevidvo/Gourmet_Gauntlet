@@ -7,7 +7,7 @@ import Auth from "../utils/auth";
 
 const Login = () => {
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -29,6 +29,7 @@ const Login = () => {
       console.log(data);
 
       Auth.login(data.login.token);
+      
     } catch (e) {
       console.error(e);
     }
@@ -49,12 +50,12 @@ const Login = () => {
                 <h4 className="card-header-title">Login</h4>
               </header>
               <div className="card-content">
-                {data ? (
+                {/* {data ? (
                   <p>
                     Success! You may now head{" "}
                     <Link to="/">back to the homepage.</Link>
                   </p>
-                ) : (
+                ) : ( */}
                   <form onSubmit={handleFormSubmit}>
                     <div className="field">
                       <label className="label">Your email</label>
@@ -94,7 +95,7 @@ const Login = () => {
                       </div>
                     </div>
                   </form>
-                )}
+                {/* )} */}
 
                 {error && (
                   <div className="notification is-danger">{error.message}</div>
