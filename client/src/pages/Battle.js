@@ -1,5 +1,5 @@
 import React from "react";
-import '../utils/game/main'
+import playGame from "../utils/game/main";
 
 /* 
 On page load:
@@ -40,6 +40,7 @@ Post-battle:
 const Battle = () => {
   return (
     <div id="battle" className="hero is-fullheight">
+    
     </div>
   );
 };

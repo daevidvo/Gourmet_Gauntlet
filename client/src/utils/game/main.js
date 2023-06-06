@@ -1,7 +1,8 @@
 import playButton from "./playButton"
+import drawCards from "./drawCards"
 
 
-async function playGame() {
+export default async function playGame() {
     let game = true
     await new Promise(sleep => setTimeout(sleep,2000))
 
@@ -9,7 +10,9 @@ async function playGame() {
 
     playButton();
 
-    
+    let handArr = await drawCards();
+
+    console.log(handArr)
 
 
 
@@ -42,5 +45,3 @@ async function playGame() {
     //     game = false
     // })
 }
-
-playGame()
