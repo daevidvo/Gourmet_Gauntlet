@@ -1,6 +1,5 @@
 import React from "react";
-import { PlayerHand } from "../components/PlayerHand";
-import { EnemyHand } from "../components/EnemyHand";
+import '../utils/game/main'
 
 /* 
 On page load:
@@ -40,9 +39,7 @@ Post-battle:
 
 const Battle = () => {
   return (
-    <div id="battle">
-      <EnemyHand />
-      <PlayerHand />
+    <div id="battle" className="hero is-fullheight">
     </div>
   );
 };
