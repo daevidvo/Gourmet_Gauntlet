@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
-
-import { GET_ALL_CARDS } from '../utils/queries';
+import React from 'react';
 
 function Card(props) {
     return (
-        <div className="card w-4">
+        <div className="card w-4" key={props._id}>
             <div className="card-image">
                 <figure className="is-4by3">
                     <img src={props.cardImage} alt={props.cardName} />
