@@ -1,7 +1,5 @@
 import React from "react";
-import { useQuery, useMutation } from "@apollo/client";
-import Card from '../components/Card';
-import { GET_ALL_CARDS, GET_GAME } from "../utils/queries";
+import '../utils/game/main'
 
 /* 
 On page load:
@@ -39,38 +37,11 @@ Post-battle:
 }
 */
 
-const Battle =  () => {
-    const { loading, data } = useQuery(GET_ALL_CARDS);
-    const cards = data?.getAllCards;
-    console.log(data);
-    console.log(cards);
-    
-    if(loading){
-        return (
-            <h1> Loading </h1>
-        )
-    }
-
-    let randArray = [];
-    const fiveRandCards = () => {
-        randArray = [];
-        for (let i = 0; i < 5; i++){
-            let randNum = Math.floor(Math.random() * 14); //5 rand cards from 14 card db
-            randArray.push(cards[randNum]);
-        }
-        console.log(randArray);
-
-        return null;
-    }
-
-    fiveRandCards();
-
-
-return (
-    <div className="is-flex" id="battle">
-        {randArray.map((cardData) => <Card {...cardData} />)}
+const Battle = () => {
+  return (
+    <div id="battle" className="hero is-fullheight">
     </div>
-)
-}
+  );
+};
 
-export default Battle
+export default Battle;

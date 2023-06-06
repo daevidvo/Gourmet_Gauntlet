@@ -48,17 +48,17 @@ const resolvers = {
     },
     setGameProgress: async (
       parent,
-      { userId, userStage, userHealth, userCards }
+      { userStage, userHealth, userCards }, context
     ) => {
       const game = await Game.findOneAndUpdate(
-        { userId: userId },
+        { userId: context.user._id },
         { userStage: userStage, userHealth: userHealth, userCards: userCards },
         { new: true }
       ).populate("userCards");
 
       if (!game) {
         return await Game.create({
-          userId: userId,
+          userId: context.user._id,
           userStage: userStage,
           userHealth: userHealth,
           userCards: userCards,
