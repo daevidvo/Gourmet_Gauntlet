@@ -22,13 +22,28 @@ export const GET_ALL_CARDS = gql`
     }
 `;
 
-export const GET_GAME = gql`
-    query getGame($userId: ID!) {
-        getGame(userId: $userId) {
-            _id
+export const GET_STAGE = gql`
+    query getStage($userId: ID!) {
+        getStage(userId: $userId) {
             userStage
             userId
+        }
+    }
+`;
+
+export const GET_HEALTH = gql`
+    query getHealth($userId: ID!) {
+        getHealth(userId: $userId) {
+            userId
             userHealth
+        }
+    }
+`;
+
+export const GET_PLAYER_CARDS = gql`
+    query getPlayerCards($userId: ID!) {
+        getPlayerCards(userId: $userId) {
+            userId
             userCards {
                 _id
                 cardName
@@ -40,4 +55,3 @@ export const GET_GAME = gql`
         }
     }
 `;
-
