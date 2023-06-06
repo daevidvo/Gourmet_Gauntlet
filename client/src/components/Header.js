@@ -3,17 +3,20 @@ import { Link } from "react-router-dom";
 
 import Auth from "../utils/auth";
 
+const G = require('../assets/G.png');
+const GGName = require('../assets/GGname.png');
+
 function Header() {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            width="112"
-            height="28"
-          />
-        </a>
+        <Link to="/">
+            <img
+                src={G}
+                width="100"
+                height="100"
+            />
+        </Link>
 
         <a
           role="button"
@@ -44,7 +47,7 @@ function Header() {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <Link to="/signup" className="button is-primary">
+              <Link to="/signup" className="button is-danger">
                 <strong>
                   Sign Up
                 </strong>
