@@ -7,7 +7,7 @@
         "cardType": "food"
     },
     {
-        "cardName": "L-Evan-ed Bread",
+        "cardName": "LEvaned Bread",
         "cardHealth": "1",
         "cardAttack": "2",
         "cardImage": "https://fakeimg.pl/100x100",
@@ -28,7 +28,7 @@
         "cardType": "food"
     },
     {
-        "cardName": "Chicken Nguyengs",
+        "cardName": "Nguyentermelon",
         "cardHealth": "2",
         "cardAttack": "3",
         "cardImage": "https://fakeimg.pl/100x100",
