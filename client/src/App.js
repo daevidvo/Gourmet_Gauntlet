@@ -24,7 +24,7 @@ import Battle from "./pages/Battle";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
-const httpLink = createHttpLink({ uri: "http://localhost:3001/graphql" });
+const httpLink = createHttpLink({ uri: "/graphql" });
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
@@ -51,10 +51,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route 
-                path='/battle'
-                element={<Battle/>}
-            />
+            <Route path="/battle" element={<Battle />} />
             <Route path="/login" element={<Login />} />
             {/* <Route 
                 path='/profile'
