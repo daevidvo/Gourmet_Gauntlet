@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 
 // set token secret and expiration date
-const secret = process.env.GG_SECRET;
+const secret = process.env.GG_SECRET || 'hi';
 const expiration = "2h";
 
 module.exports = {
@@ -23,6 +23,7 @@ module.exports = {
         // verify token and get user data out of it
         try {
             const { data } = jwt.verify(token, secret, { maxAge: expiration });
+            console.log(data)
             req.user = data;
         } catch (error) {
             console.log("Invalid token");
