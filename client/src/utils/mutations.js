@@ -24,21 +24,37 @@ export const SIGNUP_USER = gql`
   }
 `;
 
-export const SET_GAME_PROGRESS = gql`
-  mutation setGameProgress(
+export const SET_GAME_STAGE = gql`
+  mutation setGameStage(
     $userStage: Number
+  ) {
+    setGameStage(
+      userStage: $userStage
+    ) {
+      userStage
+    }
+  }
+`;
+
+export const SET_GAME_HEALTH = gql`
+  mutation setGameHealth(
     $userHealth: Number
+  ) {
+    setGameHealth(
+      userHealth: $userHealth
+    ) {
+      userHealth
+    }
+  }
+`;
+
+export const SET_GAME_CARDS = gql`
+  mutation setGameCards(
     $userCards: [GameCards]
   ) {
-    setGameProgress(
-      userStage: $userStage
-      userHealth: $userHealth
+    setGameCards(
       userCards: $userCards
     ) {
-      _id
-      userStage
-      userId
-      userHealth
       userCards {
         _id
         cardName
