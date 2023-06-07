@@ -1,13 +1,22 @@
 // const mongoose = require('mongoose');
 
-const allCards = () => {
-    return fetch(`/api/cards`, {
+const allCards = async () => {
+  try {
+    const data = await fetch(`/api/cards/`, {
         method: 'GET',
     });
+    console.log(data)
+
+    return data
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 export default async function drawCards() {
   const cardsArray = await allCards();
+
+  // console.log(cardsArray)
 
   let handArr = [];
   for (let x = 0; x < 5; x += 1) {
@@ -15,5 +24,7 @@ export default async function drawCards() {
 
     handArr.push(cardsArray[randomNum]);
   }
+
+  // console.log(handArr)
   return handArr;
 }
