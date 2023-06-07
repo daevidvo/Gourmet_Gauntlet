@@ -40,7 +40,9 @@ Post-battle:
 const Battle = () => {
   return (
     <div id="battle" className="hero is-fullheight">
-    
+        <div className="buttons">
+            <button className="button is-danger" onClick={playGame}>Play</button>
+        </div>
     </div>
   );
 };
