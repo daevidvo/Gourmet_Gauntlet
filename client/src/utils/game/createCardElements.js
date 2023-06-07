@@ -1,7 +1,8 @@
 export default function createCardElements (cardsArr, gameView) {
-    let 
-
-    cardsArr.map((cards) => {
-
+    
+    cardsArr.forEach((data) => {
+        const div = document.createElement('div')
+        
+        
     })
 }
