@@ -9,13 +9,14 @@ export default async function playGame() {
 
     const gameView = document.getElementById('battle')
 
-    const startButton = document.createElement('button');
-    startButton.innerHTML = 'Start Battle';
-    startButton.addEventListener('click', startBattle);
-    gameView.appendChild(startButton);
+    // const startButton = document.createElement('button');
+    // startButton.innerHTML = 'Start Battle';
+    // startButton.addEventListener('click', startBattle);
+    // gameView.appendChild(startButton);
 
     // once card is selected it is removed from handArr and added to fieldArr
     const selectCard = (card) => {
+        console.log(card);
         if (fieldArray.length < 4) {
             fieldArray.push(card);
             handArr.splice(handArr.indexOf(card), 1);
@@ -24,19 +25,22 @@ export default async function playGame() {
         card.remove();
     };
 
-    // button to switch to battle phase
-    const startBattle = () => {
-        game = "battle";
-    };
+    // // button to switch to battle phase
+    // const startBattle = () => {
+    //     game = "battle";
+    // };
 
     // create view of field above hand
-    const fieldView = document.createElement('div').setAttribute('id','field');
-    gameView.appendChild(fieldView);
+    const fieldView = document.createElement('div')
+    fieldView.setAttribute('id','field');
+    gameView.append(fieldView);
 
     // append selected card to field
     const displayCardOnField = (card) => {
         const field = document.getElementById('field');
-        field.appendChild(card);
+        console.log(field);
+        console.log(card);
+        field.append(card);
     };
 
     // button to end game
