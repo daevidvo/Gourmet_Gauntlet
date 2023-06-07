@@ -2,7 +2,7 @@ export default function createCardElements (cardsArr, gameView) {
     
     cardsArr.forEach((data) => {
         const parentCardDiv = document.createElement('div')
-        parentCardDiv.classList.add('card', 'w-4')
+        parentCardDiv.classList.add('card', 'w-4', 'parentPlayerCardDiv')
 
         const cardImageDiv = document.createElement('div')
         cardImageDiv.classList.add('card-image')

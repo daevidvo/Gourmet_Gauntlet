@@ -14,21 +14,12 @@ export default async function playGame() {
     startButton.addEventListener('click', startBattle);
     gameView.appendChild(startButton);
 
-    // creates onclick for each card and displays card through jsx
-    // const createCardElement = (card) => (
-    //     <div id={card.id} onClick={() => selectCard(card)}>
-
-    //     </div>
-    // );
-
     // once card is selected it is removed from handArr and added to fieldArr
     const selectCard = (card) => {
         handleAssignCards(handArr, card);
         const selectedCard = document.getElementById(card.id);
         selectedCard.remove();
     };
-
-    
 
     // button to switch to battle phase
     const startBattle = () => {
@@ -41,10 +32,18 @@ export default async function playGame() {
     });
 
 
-    while (game === 'draw') {
-    let handArr = await drawCards();
-    const cardElements = handArr.map((card) => createCardElement(card));
-    ReactDOM.render(cardElements, gameView);
+    function drawPhase() {
+        let handArr = await drawCards();
+        createCardElements(handArr, gameView);
+        document.querySelectorAll('.parentPlayerCardDiv').forEach((card) => {
+            card.addEventListener('click', () => {
+                selectCard(card);
+            });
+        });
+    }
+
+    drawPhase();
+    
     
     // create cards
 
