@@ -14,9 +14,8 @@ const allCards = async () => {
 }
 
 export default async function drawCards() {
-  const cardsArray = await allCards();
-
-  // console.log(cardsArray)
+  const response = await allCards();
+  let cardsArray = await response.json()
 
   let handArr = [];
   for (let x = 0; x < 5; x += 1) {
