@@ -32,7 +32,7 @@ export default async function playGame() {
     });
 
 
-    function drawPhase() {
+    async function drawPhase() {
         let handArr = await drawCards();
         createCardElements(handArr, gameView);
         document.querySelectorAll('.parentPlayerCardDiv').forEach((card) => {
@@ -66,7 +66,7 @@ export default async function playGame() {
     
     
     
-    }
+    
 
     while (game === 'battle') {
         
