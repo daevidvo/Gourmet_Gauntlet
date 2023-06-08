@@ -5,6 +5,7 @@ import endGameButton from "./endGameButton";
 import enemyData from './enemies.json';
 import createFields from "./createFields";
 import deleteGameButton from "./deleteGameButtons";
+import playerHealthEl from "./playerHealthEl";
 
 import anime from 'animejs';
 
@@ -13,8 +14,10 @@ let playerHealth = 5;
 
 
 export default async function playGame() {
+    // debugger;
     // if player's health is less than 0, then we'd reroute them to the home page
     if (!playerHealth) {
+        //TODO: add game over screen here
         window.location.assign('/');
     }
 
@@ -95,6 +98,7 @@ export default async function playGame() {
     drawPhase();
     roundStartButton();
     endGameButton();
+    playerHealthEl(playerHealth);
 
     // ends game and returns the player to the home page
     document.getElementById('endGameButton').addEventListener('click', () => {
