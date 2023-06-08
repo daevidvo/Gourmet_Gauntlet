@@ -4,6 +4,7 @@ import roundStartButton from "./roundStartButton";
 import endGameButton from "./endGameButton";
 import enemyData from './enemies.json'
 import createFields from "./createFields";
+import deleteGameButton from "./deleteGameButtons";
 
 let currStage = 1
 let playerHealth = 5
@@ -29,6 +30,16 @@ export default async function playGame() {
     
     // assigning battlefield so that we can use this later on
     const gameView = document.getElementById('battle')
+
+    if(gameView.childNodes) {
+        let childrenElementOfBattleField = gameView.childNodes
+
+        childrenElementOfBattleField.forEach((element) => {
+            if(element === '<br>' || element === '<hr>') {
+                element.remove()
+            }
+        })
+    }
 
     // once card is selected it is removed from handArr and added to fieldArr
     const selectCard = (card) => {
@@ -114,16 +125,7 @@ export default async function playGame() {
                 // grab the first card from the enemy's and player's hand and their associated values
                 const enemyCard = document.getElementById('enemyField').children[0]
                 const playerCard = document.getElementById('cardField').children[0]
-
-                // player win case
-                if (!enemyCard) {
-                    console.log('player wins')
-                    currStage++
-                    clearInterval(attackInterval)
-                    playGame()
-                    return
-                }
-
+                
                 // player lose or tie case
                 if (!playerCard || (!playerCard && !enemyCard)) {
                     playerHealth--
@@ -131,22 +133,23 @@ export default async function playGame() {
                     console.log('player loses')
                     clearInterval(attackInterval)
 
-                    // removes the fields from the battlefield 
-                    let elementsToRemove = document.querySelectorAll('.is-flex')
-                    elementsToRemove.forEach((element) => {
-                        element.remove()
-                    })
-
-                    // removes the game function buttons
-                    elementsToRemove = document.getElementById('roundStartButton')
-                    elementsToRemove.remove()
-                    elementsToRemove = document.getElementById('endGameButton')
-                    elementsToRemove.remove()
+                    deleteGameButton();
 
                     // call playGame again
                     playGame() 
                     return
                 }
+
+                // player win case
+                if (!enemyCard) {
+                    console.log('player wins')
+                    currStage++
+                    deleteGameButton();
+                    clearInterval(attackInterval)
+                    playGame()
+                    return
+                }
+
 
                 let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1]
                 let enemyCardHealth = enemyCardHealthTextContent.textContent
