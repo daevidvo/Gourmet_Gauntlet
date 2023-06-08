@@ -6,6 +6,10 @@ import enemyData from './enemies.json'
 import createFields from "./createFields";
 import deleteGameButton from "./deleteGameButtons";
 
+import anime from 'animejs';
+
+import deleteGameButton from "./deleteGameButtons";
+
 let currStage = 1
 let playerHealth = 5
 
@@ -173,40 +177,61 @@ export default async function playGame() {
                 
                 // base case if no more cards on either field
                 
-                
+                animateCardHit(playerCard, enemyCard);
                 // this is base case for seeing each card's health
                 
                 playerCardHealth = playerCardHealth - enemyCardAttack
                 enemyCardHealth = enemyCardHealth - playerCardAttack
                 
                 if(!enemyCardHealth) {
-                    enemyCard.remove()
+                    setTimeout(() => {
+                        enemyCard.remove();
+                      }, 250);
                 }
                 
-                if(!playerCardHealth) {
-                    playerCard.remove()
+                if (!playerCardHealth) {
+                    setTimeout(() => {
+                      playerCard.remove();
+                    }, 250);
                 }
 
                 console.log('enemy card ', enemyCardHealth, enemyCardAttack)
                 console.log('player card ', playerCardHealth, playerCardAttack)
 
-                playerCardHealthTextContent.textContent = playerCardHealth
-                enemyCardHealthTextContent.textContent = enemyCardHealth
+                playerCardHealthTextContent.textContent = "Health: " + playerCardHealth
+                enemyCardHealthTextContent.textContent = "Health: " + enemyCardHealth
 
 
-            }, 500);
+            }, 1500);
         }
         
         
     }
 
+    function animateCardHit(playerCard, enemyCard) {
+        const playerCardPosition = playerCard.getBoundingClientRect();
+        const enemyCardPosition = enemyCard.getBoundingClientRect();
+      
+        const timeline = anime.timeline({
+          easing: 'linear',
+          duration: 250
+        });
+      
+        timeline.add({
+          targets: playerCard,
+          translateX: enemyCardPosition.left - playerCardPosition.left,
+          translateY: enemyCardPosition.top - playerCardPosition.top,
+        });
+      
+        timeline.add({
+          targets: playerCard,
+          translateX: 0,
+          translateY: 0,
+          delay: 500
+        });
+      }
+
     document.getElementById('roundStartButton').addEventListener('click', () => {
         round(currStage)
     })
-    
-    
-    
-    
-    
-
 }
