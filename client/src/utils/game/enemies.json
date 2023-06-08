@@ -160,10 +160,10 @@
         "id": 6,
         "gameCards": [
             {
-                "cardName": "Jerome Stick",
+                "cardName": "Enokohort",
                 "cardHealth": "38",
                 "cardAttack": "2",
-                "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672016285757/Jerome_Stick.png",
+                "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116488968033275904/Enokohort.png",
                 "cardType": "food"
             }
         ]
