@@ -11,7 +11,7 @@ function Header() {
     event.preventDefault();
     Auth.logout();
   };
-  
+
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -55,9 +55,6 @@ function Header() {
               {Auth.loggedIn() ? (
                 <>
                   <Link to="/profile" className="button is-danger">
-                    <strong>Profile</strong>
-                  </Link>
-                  <Link to="/profile" className="button is-light">
                     <strong>Profile</strong>
                   </Link>
                   <button className="button is-light" onClick={logout}>
