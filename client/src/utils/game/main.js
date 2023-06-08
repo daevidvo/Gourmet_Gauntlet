@@ -119,8 +119,8 @@ export default async function playGame() {
                 if (!enemyCard) {
                     console.log('player wins')
                     currStage++
-                    round(currStage)
                     clearInterval(attackInterval)
+                    playGame()
                     return
                 }
 
