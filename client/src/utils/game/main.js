@@ -5,18 +5,28 @@ import endGameButton from "./endGameButton";
 import enemyData from './enemies.json'
 import createFields from "./createFields";
 
+let currStage = 1
+let playerHealth = 5
+
+
 export default async function playGame() {
-    let game = 'draw'
+    console.log(currStage)
+    console.log(playerHealth)
     let handArr = [];
     let fieldArray = [];
     const hr = document.createElement('hr')
     const br = document.createElement('br')
 
+
     // removes the previous play button
-    document.getElementById('playButton').remove()
+    if(document.getElementById('playButton')) {
+        document.getElementById('playButton').remove()
+    }
 
-
+    
+    
     const gameView = document.getElementById('battle')
+
 
     // const startButton = document.createElement('button');
     // startButton.innerHTML = 'Start Battle';
@@ -38,7 +48,7 @@ export default async function playGame() {
     // create view of the enemy field
     createFields(gameView, 'enemyField')
 
-    createCardElements(enemyData[0].gameCards, document.getElementById('enemyField'))
+    createCardElements(enemyData[0].gameCards, document.getElementById('enemyField'), 'enemyCards')
 
     // create hr to separate the enemy and the player's hand
     gameView.append(br)
@@ -61,10 +71,10 @@ export default async function playGame() {
     async function drawPhase() {
         // create the cards and puts it into the playerHandDiv
         let handArr = await drawCards();
-        createCardElements(handArr, document.getElementById('playerHand'));
+        createCardElements(handArr, document.getElementById('playerHand'), 'playerHandCard');
 
         // moves the cards to the field
-        document.querySelectorAll('.parentPlayerCardDiv').forEach((card) => {
+        document.querySelectorAll('.playerHandCard').forEach((card) => {
             card.addEventListener('click', () => {
                 // only allows four to be played on the field
                 if(document.getElementById('cardField').children.length > 3) {
@@ -86,35 +96,118 @@ export default async function playGame() {
     })
 
     // battle itself
-    function round1() {
-        const playerHand = document.getElementById('playerHand')
-
-        // removes all of the elements in the playerHand
-        while(playerHand.children[0]) {
-            playerHand.children[0].remove()
+    function round(stageNum) {
+        if (!playerHealth) {
+            window.location.assign('/')
         }
 
+
+        if (stageNum === 1) {
+            const playerHand = document.getElementById('playerHand')
+
+            // removes all of the elements in the playerHand
+            while(playerHand.children[0]) {
+                playerHand.children[0].remove()
+            }
+    
+            
+    
+            
+    
+            let attackInterval = setInterval(() => {
+                // grab the first card from the enemy's and player's hand and their associated values
+                const enemyCard = document.getElementById('enemyField').children[0]
+                const playerCard = document.getElementById('cardField').children[0]
+
+                if (!enemyCard) {
+                    console.log('player wins')
+                    currStage++
+                    clearInterval(attackInterval)
+                    return
+                }
+
+                if (!playerCard) {
+                    playerHealth--
+
+                    console.log('player loses')
+                    clearInterval(attackInterval)
+
+                    let elementsToRemove = document.querySelectorAll('.is-flex')
+                    elementsToRemove.forEach((element) => {
+                        element.remove()
+                    })
+
+                    elementsToRemove = document.getElementById('roundStartButton')
+                    elementsToRemove.remove()
+                    elementsToRemove = document.getElementById('endGameButton')
+                    elementsToRemove.remove()
+
+                    playGame() 
+                    return
+                }
+
+                let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1]
+                let enemyCardHealth = enemyCardHealthTextContent.textContent
+                enemyCardHealth = enemyCardHealth.split(' ')
+                enemyCardHealth = enemyCardHealth[1]
+                enemyCardHealth = Number(enemyCardHealth)
+        
+                let enemyCardAttackTextContent = enemyCard.children[1].children[1].textContent
+                let enemyCardAttack = enemyCardAttackTextContent
+                enemyCardAttack = enemyCardAttack.split(' ')
+                enemyCardAttack = enemyCardAttack[1]
+                enemyCardAttack = Number(enemyCardAttack)
+        
+                
+                let playerCardHealthTextContent = playerCard.children[1].children[0].children[0].children[1]
+                let playerCardHealth = playerCardHealthTextContent.textContent
+                playerCardHealth = playerCardHealth.split(' ')
+                playerCardHealth = playerCardHealth[1]
+                playerCardHealth = Number(playerCardHealth)
+                
+                let playerCardAttackTextContent = playerCard.children[1].children[1].textContent
+                let playerCardAttack = playerCardAttackTextContent
+                playerCardAttack = playerCardAttack.split(' ')
+                playerCardAttack = playerCardAttack[1]
+                playerCardAttack = Number(playerCardAttack)
+                
+                
+                // base case if no more cards on either field
+                
+                
+                // this is base case for seeing each card's health
+                
+                playerCardHealth = playerCardHealth - enemyCardAttack
+                enemyCardHealth = enemyCardHealth - playerCardAttack
+                
+                if(enemyCardHealth < 1) {
+                    enemyCard.remove()
+                }
+                
+                if(playerCardHealth < 1) {
+                    playerCard.remove()
+                }
+
+                console.log('enemy card ', enemyCardHealth, enemyCardAttack)
+                console.log('player card ', playerCardHealth, playerCardAttack)
+
+                playerCardHealthTextContent.textContent = playerCardHealth
+                enemyCardHealthTextContent.textContent = enemyCardHealth
+
+
+            }, 500);
+        }
+        
         
     }
 
-    document.getElementById('roundStartButton').addEventListener('click', round1)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    document.getElementById('roundStartButton').addEventListener('click', () => {
+        round(currStage)
+    })
     
     
     
     
     
 
-    while (game === 'battle') {
-        
-    }
 }
