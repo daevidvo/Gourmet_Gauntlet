@@ -7,7 +7,7 @@
         "cardType": "food"
     },
     {
-        "cardName": "LEvaned Bread",
+        "cardName": "L-Evan-ed Bread",
         "cardHealth": "1",
         "cardAttack": "2",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672796426250/Levaned_Bread.png",
@@ -70,31 +70,220 @@
         "cardType": "food"
     },
     {
-        "cardName": "Salt",
+        "cardName": "Scarltt",
         "cardHealth": "1",
         "cardAttack": "1",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718443036712/Salt.png",
         "cardType": "spice"
     },
     {
-        "cardName": "Pepper",
+        "cardName": "Jepper",
         "cardHealth": "2",
         "cardAttack": "2",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165717776158740/Pepper.png",
         "cardType": "spice"
     },
     {
-        "cardName": "Paprika",
+        "cardName": "Sobolevskayenne",
         "cardHealth": "3",
         "cardAttack": "3",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673798877355/Paprika.png",
         "cardType": "spice"
     },
     {
-        "cardName": "Saffron",
+        "cardName": "S-Afi-ron",
         "cardHealth": "5",
         "cardAttack": "5",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718069755974/Saffron.png",
         "cardType": "spice"
+    },
+    {
+        "cardName": "Gumbro",
+        "cardHealth": "4",
+        "cardAttack": "1",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Bahalava",
+        "cardHealth": "5",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Albersunny-D",
+        "cardHealth": "4",
+        "cardAttack": "1",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Caluibflower",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Cassava",
+        "cardHealth": "3",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Christoaster Struudel",
+        "cardHealth": "4",
+        "cardAttack": "1",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Lam Chops",
+        "cardHealth": "2",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Purple Didrik",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Eugenelato",
+        "cardHealth": "1",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Carden-itas",
+        "cardHealth": "1",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Parcherry",
+        "cardHealth": "2",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Chicken Kakage",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Waylandaise",
+        "cardHealth": "10",
+        "cardAttack": "0",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Laurie Fish and Chips",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Mole-na",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Mattatouille",
+        "cardHealth": "3",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Baker-d Ziti",
+        "cardHealth": "2",
+        "cardAttack": "1",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Qui-Noah",
+        "cardHealth": "3",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Macaroys",
+        "cardHealth": "1",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Sabeens and Rice",
+        "cardHealth": "2",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Higa-C",
+        "cardHealth": "2",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Sancheese",
+        "cardHealth": "1",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Hamturk",
+        "cardHealth": "3",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Sheaved Ice",
+        "cardHealth": "3",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Suchayams",
+        "cardHealth": "2",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Tamaraind",
+        "cardHealth": "1",
+        "cardAttack": "2",
+        "cardImage": "",
+        "cardType": "food"
+    },
+    {
+        "cardName": "Pickled Tollives",
+        "cardHealth": "2",
+        "cardAttack": "3",
+        "cardImage": "",
+        "cardType": "food"
     }
 ]
