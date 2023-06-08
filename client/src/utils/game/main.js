@@ -21,7 +21,12 @@ export default async function playGame() {
     // if player's health is less than 0, then we'd reroute them to the home page
     if (!playerHealth) {
         //TODO: add game over screen here
-        window.location.assign('/');
+        createModal();
+        showModal('NO MORE LIVES!!!');
+        setTimeout(() => {
+            closeModal();
+            window.location.assign('/');
+        } , 2000)
     }
 
     let handArr = [];
