@@ -5,7 +5,6 @@ const allCards = async () => {
     const data = await fetch(`/api/cards/`, {
         method: 'GET',
     });
-    console.log(data)
 
     return data
   } catch (err) {
