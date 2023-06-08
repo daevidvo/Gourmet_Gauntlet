@@ -3,98 +3,98 @@
         "cardName": "Cruzcous",
         "cardHealth": "1",
         "cardAttack": "1",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Kruzcous.png",
         "cardType": "food"
     },
     {
         "cardName": "LEvaned Bread",
         "cardHealth": "1",
         "cardAttack": "2",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/LevanedBread.png",
         "cardType": "food"
     },
     {
         "cardName": "Gochuchung",
         "cardHealth": "2",
         "cardAttack": "1",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Gochuchung.png",
         "cardType": "food"
     },
     {
         "cardName": "SpaJeddi",
         "cardHealth": "2",
         "cardAttack": "2",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Spajeddi.png",
         "cardType": "food"
     },
     {
         "cardName": "Nguyentermelon",
         "cardHealth": "2",
         "cardAttack": "3",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Nguyentermelon2.png",
         "cardType": "food"
     },
     {
         "cardName": "Mashed Votatoes",
         "cardHealth": "2",
         "cardAttack": "3",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/MashedVotatoes.png",
         "cardType": "food"
     },
     {
         "cardName": "Manuelita Pizza",
         "cardHealth": "2",
         "cardAttack": "4",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/ManuelitaPizza.png",
         "cardType": "food"
     },
     {
         "cardName": "PB & James",
         "cardHealth": "2",
         "cardAttack": "4",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/pbjames.png",
         "cardType": "food"
     },
     {
         "cardName": "Jerome Stick",
         "cardHealth": "1",
         "cardAttack": "5",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/JeromeStick.png",
         "cardType": "food"
     },
     {
         "cardName": "Baked Kyle Chips",
         "cardHealth": "5",
         "cardAttack": "1",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/BakedKyleChips.png",
         "cardType": "food"
     },
     {
         "cardName": "Salt",
         "cardHealth": "1",
         "cardAttack": "1",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Salt.png",
         "cardType": "spice"
     },
     {
         "cardName": "Pepper",
         "cardHealth": "2",
         "cardAttack": "2",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Pepper.png",
         "cardType": "spice"
     },
     {
         "cardName": "Paprika",
         "cardHealth": "3",
         "cardAttack": "3",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Paprika.png",
         "cardType": "spice"
     },
     {
         "cardName": "Saffron",
         "cardHealth": "5",
         "cardAttack": "5",
-        "cardImage": "https://fakeimg.pl/100x100",
+        "cardImage": "../../assets/cardImages/Saffron.png",
         "cardType": "spice"
     }
 ]
