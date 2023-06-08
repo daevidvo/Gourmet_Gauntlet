@@ -9,8 +9,11 @@ export default async function playGame() {
     let game = 'draw'
     let handArr = [];
     let fieldArray = [];
+    const hr = document.createElement('hr')
+    const br = document.createElement('br')
 
-    // on end game relocate to root URL
+    // removes the previous play button
+    document.getElementById('playButton').remove()
 
 
     const gameView = document.getElementById('battle')
@@ -32,22 +35,22 @@ export default async function playGame() {
         // remove HTML card from displayed hand
         card.remove();
     };
+    // create view of the enemy field
+    createFields(gameView, 'enemyField')
 
-    // // button to switch to battle phase
-    // const startBattle = () => {
-    //     game = "battle";
-    // };
+    createCardElements(enemyData[0].gameCards, document.getElementById('enemyField'))
 
-    // create view of field above hand
+    // create hr to separate the enemy and the player's hand
+    gameView.append(br)
+    
+    // create the div for the player's card they want to play
     createFields(gameView, 'cardField')
 
-    
-    // create hr to separate the field and the player's hand
-    const hr = document.createElement('hr')
     gameView.append(hr)
-    
-    // create the div for the player's hand
+
+    // create playerHand
     createFields(gameView, 'playerHand')
+
     
     // append selected card to field
     const displayCardOnField = (card) => {
@@ -56,9 +59,6 @@ export default async function playGame() {
     };
 
     async function drawPhase() {
-
-        
-
         // create the cards and puts it into the playerHandDiv
         let handArr = await drawCards();
         createCardElements(handArr, document.getElementById('playerHand'));
@@ -84,12 +84,20 @@ export default async function playGame() {
     document.getElementById('endGameButton').addEventListener('click', () => {
         window.location.assign('/')
     })
-    
-    console.log(enemyData[0])
 
     // battle itself
+    function round1() {
+        const playerHand = document.getElementById('playerHand')
 
+        // removes all of the elements in the playerHand
+        while(playerHand.children[0]) {
+            playerHand.children[0].remove()
+        }
 
+        
+    }
+
+    document.getElementById('roundStartButton').addEventListener('click', round1)
     
     
     
