@@ -4,9 +4,6 @@ import roundStartButton from "./roundStartButton";
 import endGameButton from "./endGameButton";
 import enemyData from './enemies.json'
 import createFields from "./createFields";
-import deleteGameButton from "./deleteGameButtons";
-
-import anime from 'animejs';
 
 let currStage = 1
 let playerHealth = 5
@@ -20,6 +17,7 @@ export default async function playGame() {
 
     let handArr = [];
     let fieldArray = [];
+    const hr = document.createElement('hr')
     const br = document.createElement('br')
 
 
@@ -31,11 +29,6 @@ export default async function playGame() {
     
     // assigning battlefield so that we can use this later on
     const gameView = document.getElementById('battle')
-
-    if(document.querySelectorAll('br')){
-        const elementsToRemove = document.querySelectorAll('br')
-        elementsToRemove.forEach((element) => element.remove())
-    }
 
     // once card is selected it is removed from handArr and added to fieldArr
     const selectCard = (card) => {
@@ -53,7 +46,7 @@ export default async function playGame() {
     // create view of the enemy field
     createFields(gameView, 'enemyField')
 
-    createCardElements(enemyData[currStage-1].gameCards, document.getElementById('enemyField'), 'enemyCards')
+    createCardElements(enemyData[0].gameCards, document.getElementById('enemyField'), 'enemyCards')
 
     // create hr to separate the enemy and the player's hand
     gameView.append(br)
@@ -61,7 +54,7 @@ export default async function playGame() {
     // create the div for the player's card they want to play
     createFields(gameView, 'cardField')
 
-    gameView.append(br)
+    gameView.append(hr)
 
     // create playerHand
     createFields(gameView, 'playerHand')
@@ -105,7 +98,7 @@ export default async function playGame() {
     function round(stageNum) {
 
 
-        if (stageNum) {
+        if (stageNum === 1) {
             const playerHand = document.getElementById('playerHand')
 
             // removes all of the elements in the playerHand
@@ -121,31 +114,38 @@ export default async function playGame() {
                 // grab the first card from the enemy's and player's hand and their associated values
                 const enemyCard = document.getElementById('enemyField').children[0]
                 const playerCard = document.getElementById('cardField').children[0]
-                
-                // player lose or tie case
-                if (!playerCard || (!playerCard && !enemyCard)) {
+
+                // checks to see if there are no more enemy cards
+                if (!enemyCard) {
+                    console.log('player wins')
+                    currStage++
+                    clearInterval(attackInterval)
+                    return
+                }
+
+                // checks to see if there are no more player cards
+                if (!playerCard) {
                     playerHealth--
 
                     console.log('player loses')
                     clearInterval(attackInterval)
 
-                    deleteGameButton();
+                    // removes the fields from the battlefield 
+                    let elementsToRemove = document.querySelectorAll('.is-flex')
+                    elementsToRemove.forEach((element) => {
+                        element.remove()
+                    })
+
+                    // removes the game function buttons
+                    elementsToRemove = document.getElementById('roundStartButton')
+                    elementsToRemove.remove()
+                    elementsToRemove = document.getElementById('endGameButton')
+                    elementsToRemove.remove()
 
                     // call playGame again
                     playGame() 
                     return
                 }
-
-                // player win case
-                if (!enemyCard) {
-                    console.log('player wins')
-                    currStage++
-                    deleteGameButton();
-                    clearInterval(attackInterval)
-                    playGame()
-                    return
-                }
-
 
                 let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1]
                 let enemyCardHealth = enemyCardHealthTextContent.textContent
@@ -175,61 +175,40 @@ export default async function playGame() {
                 
                 // base case if no more cards on either field
                 
-                animateCardHit(playerCard, enemyCard);
+                
                 // this is base case for seeing each card's health
                 
                 playerCardHealth = playerCardHealth - enemyCardAttack
                 enemyCardHealth = enemyCardHealth - playerCardAttack
                 
-                if(!enemyCardHealth || enemyCardHealth < 1) {
-                    setTimeout(() => {
-                        enemyCard.remove();
-                      }, 250);
+                if(enemyCardHealth < 1) {
+                    enemyCard.remove()
                 }
                 
-                if (!playerCardHealth || enemyCardHealth < 1) {
-                    setTimeout(() => {
-                      playerCard.remove();
-                    }, 250);
+                if(playerCardHealth < 1) {
+                    playerCard.remove()
                 }
 
                 console.log('enemy card ', enemyCardHealth, enemyCardAttack)
                 console.log('player card ', playerCardHealth, playerCardAttack)
 
-                playerCardHealthTextContent.textContent = "Health: " + playerCardHealth
-                enemyCardHealthTextContent.textContent = "Health: " + enemyCardHealth
+                playerCardHealthTextContent.textContent = playerCardHealth
+                enemyCardHealthTextContent.textContent = enemyCardHealth
 
 
-            }, 1500);
+            }, 500);
         }
         
         
     }
 
-    function animateCardHit(playerCard, enemyCard) {
-        const playerCardPosition = playerCard.getBoundingClientRect();
-        const enemyCardPosition = enemyCard.getBoundingClientRect();
-      
-        const timeline = anime.timeline({
-          easing: 'linear',
-          duration: 250
-        });
-      
-        timeline.add({
-          targets: playerCard,
-          translateX: enemyCardPosition.left - playerCardPosition.left,
-          translateY: enemyCardPosition.top - playerCardPosition.top,
-        });
-      
-        timeline.add({
-          targets: playerCard,
-          translateX: 0,
-          translateY: 0,
-          delay: 500
-        });
-      }
-
     document.getElementById('roundStartButton').addEventListener('click', () => {
         round(currStage)
     })
+    
+    
+    
+    
+    
+
 }
