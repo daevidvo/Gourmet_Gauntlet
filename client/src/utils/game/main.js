@@ -181,13 +181,13 @@ export default async function playGame() {
                 playerCardHealth = playerCardHealth - enemyCardAttack
                 enemyCardHealth = enemyCardHealth - playerCardAttack
                 
-                if(!enemyCardHealth) {
+                if(!enemyCardHealth || enemyCardHealth < 1) {
                     setTimeout(() => {
                         enemyCard.remove();
                       }, 250);
                 }
                 
-                if (!playerCardHealth) {
+                if (!playerCardHealth || enemyCardHealth < 1) {
                     setTimeout(() => {
                       playerCard.remove();
                     }, 250);
