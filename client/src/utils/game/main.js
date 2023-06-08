@@ -6,6 +6,7 @@ import enemyData from './enemies.json';
 import createFields from "./createFields";
 import deleteGameButton from "./deleteGameButtons";
 import playerHealthEl from "./playerHealthEl";
+import stageNumberEl from "./stageNum";
 
 import anime from 'animejs';
 
@@ -29,6 +30,10 @@ export default async function playGame() {
     // removes the previous play button
     if(document.getElementById('playButton')) {
         document.getElementById('playButton').remove();
+    }
+    // removes the previous stageNumber button
+    if (document.getElementById('stageNumber')) {
+        document.getElementById('stageNumber').remove();
     }
 
     
@@ -99,6 +104,7 @@ export default async function playGame() {
     roundStartButton();
     endGameButton();
     playerHealthEl(playerHealth);
+    stageNumberEl(currStage);
 
     // ends game and returns the player to the home page
     document.getElementById('endGameButton').addEventListener('click', () => {
