@@ -3,6 +3,7 @@ import createCardElements from "./createCardElements";
 import roundStartButton from "./roundStartButton";
 import endGameButton from "./endGameButton";
 import enemyData from './enemies.json'
+import createFields from "./createFields";
 
 export default async function playGame() {
     let game = 'draw'
@@ -38,10 +39,7 @@ export default async function playGame() {
     // };
 
     // create view of field above hand
-    const fieldView = document.createElement('div')
-    fieldView.setAttribute('id','field');
-    fieldView.classList.add('is-flex', 'is-justify-content-center')
-    gameView.append(fieldView);
+    createFields(gameView, 'cardField')
 
     
     // create hr to separate the field and the player's hand
@@ -49,14 +47,11 @@ export default async function playGame() {
     gameView.append(hr)
     
     // create the div for the player's hand
-    const playerHandDiv = document.createElement('div')
-    playerHandDiv.setAttribute('id', 'playerHandDiv')
-    playerHandDiv.classList.add('is-flex', 'is-justify-content-center')
-    gameView.append(playerHandDiv)
+    createFields(gameView, 'playerHand')
     
     // append selected card to field
     const displayCardOnField = (card) => {
-        const field = document.getElementById('field');
+        const field = document.getElementById('cardField');
         field.append(card);
     };
 
@@ -66,13 +61,13 @@ export default async function playGame() {
 
         // create the cards and puts it into the playerHandDiv
         let handArr = await drawCards();
-        createCardElements(handArr, document.getElementById('playerHandDiv'));
+        createCardElements(handArr, document.getElementById('playerHand'));
 
         // moves the cards to the field
         document.querySelectorAll('.parentPlayerCardDiv').forEach((card) => {
             card.addEventListener('click', () => {
                 // only allows four to be played on the field
-                if(document.getElementById('field').children.length > 3) {
+                if(document.getElementById('cardField').children.length > 3) {
                     return
                 }
                 selectCard(card);
