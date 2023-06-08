@@ -18,18 +18,6 @@ code {
     monospace;
 }
 
-#enemyField {
-  background-image: url("https://cdn.discordapp.com/attachments/1093280491312009238/1116425302067908678/halfplateenemy.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
-#cardField {
-  background-image: url("https://cdn.discordapp.com/attachments/1093280491312009238/1116425301782704158/halfplate.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-
 #battle {
   background-image: url("https://cdn.discordapp.com/attachments/1093280491312009238/1116420980525502534/Platebg.png");
   background-repeat: no-repeat;

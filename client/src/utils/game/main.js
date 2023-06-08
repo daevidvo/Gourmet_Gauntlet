@@ -18,7 +18,6 @@ export default async function playGame() {
 
     let handArr = [];
     let fieldArray = [];
-    const hr = document.createElement('hr')
     const br = document.createElement('br')
 
 
@@ -31,11 +30,8 @@ export default async function playGame() {
     // assigning battlefield so that we can use this later on
     const gameView = document.getElementById('battle')
 
-    if(document.querySelectorAll('hr')){
-        let elementsToRemove = document.querySelectorAll('hr')
-        elementsToRemove.forEach((element) => element.remove())
-
-        elementsToRemove = document.querySelectorAll('br')
+    if(document.querySelectorAll('br')){
+        const elementsToRemove = document.querySelectorAll('br')
         elementsToRemove.forEach((element) => element.remove())
     }
 
@@ -63,7 +59,7 @@ export default async function playGame() {
     // create the div for the player's card they want to play
     createFields(gameView, 'cardField')
 
-    gameView.append(hr)
+    gameView.append(br)
 
     // create playerHand
     createFields(gameView, 'playerHand')
