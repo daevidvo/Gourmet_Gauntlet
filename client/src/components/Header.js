@@ -7,6 +7,11 @@ const G = require('../assets/G.png');
 const GGName = require('../assets/GGname.png');
 
 function Header() {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -48,12 +53,17 @@ function Header() {
           <div className="navbar-item">
             <div className="buttons">
               {Auth.loggedIn() ? (
-                <Link to="/profile" className="button is-primary">
-                  <strong>Profile</strong>
-                </Link>
+                <>
+                  <Link to="/profile" className="button is-danger">
+                    <strong>Profile</strong>
+                  </Link>
+                  <button className="button is-light" onClick={logout}>
+                    Logout
+                  </button>
+                </>
               ) : (
                 <>
-                  <Link to="/signup" className="button is-primary">
+                  <Link to="/signup" className="button is-danger">
                     <strong>Sign Up</strong>
                   </Link>
                   <Link to="/login" className="button is-light">
