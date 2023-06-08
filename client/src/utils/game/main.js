@@ -10,8 +10,11 @@ let playerHealth = 5
 
 
 export default async function playGame() {
-    console.log(currStage)
-    console.log(playerHealth)
+    // if player's health is less than 0, then we'd reroute them to the home page
+    if (!playerHealth) {
+        window.location.assign('/')
+    }
+
     let handArr = [];
     let fieldArray = [];
     const hr = document.createElement('hr')
@@ -24,14 +27,8 @@ export default async function playGame() {
     }
 
     
-    
+    // assigning battlefield so that we can use this later on
     const gameView = document.getElementById('battle')
-
-
-    // const startButton = document.createElement('button');
-    // startButton.innerHTML = 'Start Battle';
-    // startButton.addEventListener('click', startBattle);
-    // gameView.appendChild(startButton);
 
     // once card is selected it is removed from handArr and added to fieldArr
     const selectCard = (card) => {
@@ -45,6 +42,7 @@ export default async function playGame() {
         // remove HTML card from displayed hand
         card.remove();
     };
+
     // create view of the enemy field
     createFields(gameView, 'enemyField')
 
@@ -86,6 +84,7 @@ export default async function playGame() {
         });
     }
 
+    // draws the cards and creates the buttons for play functions
     drawPhase();
     roundStartButton();
     endGameButton();
@@ -97,9 +96,6 @@ export default async function playGame() {
 
     // battle itself
     function round(stageNum) {
-        if (!playerHealth) {
-            window.location.assign('/')
-        }
 
 
         if (stageNum === 1) {
@@ -119,6 +115,7 @@ export default async function playGame() {
                 const enemyCard = document.getElementById('enemyField').children[0]
                 const playerCard = document.getElementById('cardField').children[0]
 
+                // checks to see if there are no more enemy cards
                 if (!enemyCard) {
                     console.log('player wins')
                     currStage++
@@ -126,22 +123,26 @@ export default async function playGame() {
                     return
                 }
 
+                // checks to see if there are no more player cards
                 if (!playerCard) {
                     playerHealth--
 
                     console.log('player loses')
                     clearInterval(attackInterval)
 
+                    // removes the fields from the battlefield 
                     let elementsToRemove = document.querySelectorAll('.is-flex')
                     elementsToRemove.forEach((element) => {
                         element.remove()
                     })
 
+                    // removes the game function buttons
                     elementsToRemove = document.getElementById('roundStartButton')
                     elementsToRemove.remove()
                     elementsToRemove = document.getElementById('endGameButton')
                     elementsToRemove.remove()
 
+                    // call playGame again
                     playGame() 
                     return
                 }
