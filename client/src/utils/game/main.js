@@ -46,7 +46,7 @@ export default async function playGame() {
     // create view of the enemy field
     createFields(gameView, 'enemyField')
 
-    createCardElements(enemyData[currStage-1].gameCards, document.getElementById('enemyField'), 'enemyCards')
+    createCardElements(enemyData[0].gameCards, document.getElementById('enemyField'), 'enemyCards')
 
     // create hr to separate the enemy and the player's hand
     gameView.append(br)
@@ -98,7 +98,7 @@ export default async function playGame() {
     function round(stageNum) {
 
 
-        if (stageNum) {
+        if (stageNum === 1) {
             const playerHand = document.getElementById('playerHand')
 
             // removes all of the elements in the playerHand
@@ -115,17 +115,16 @@ export default async function playGame() {
                 const enemyCard = document.getElementById('enemyField').children[0]
                 const playerCard = document.getElementById('cardField').children[0]
 
-                // player win case
+                // checks to see if there are no more enemy cards
                 if (!enemyCard) {
                     console.log('player wins')
                     currStage++
-                    round(currStage)
                     clearInterval(attackInterval)
                     return
                 }
 
-                // player lose or tie case
-                if (!playerCard || (!playerCard && !enemyCard)) {
+                // checks to see if there are no more player cards
+                if (!playerCard) {
                     playerHealth--
 
                     console.log('player loses')
@@ -182,11 +181,11 @@ export default async function playGame() {
                 playerCardHealth = playerCardHealth - enemyCardAttack
                 enemyCardHealth = enemyCardHealth - playerCardAttack
                 
-                if(!enemyCardHealth) {
+                if(enemyCardHealth < 1) {
                     enemyCard.remove()
                 }
                 
-                if(!playerCardHealth) {
+                if(playerCardHealth < 1) {
                     playerCard.remove()
                 }
 
