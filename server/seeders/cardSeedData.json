@@ -3,98 +3,98 @@
         "cardName": "Cruzcous",
         "cardHealth": "1",
         "cardAttack": "1",
-        "cardImage": "../../assets/cardImages/Kruzcous.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672456699904/Kruzcous.png",
         "cardType": "food"
     },
     {
         "cardName": "LEvaned Bread",
         "cardHealth": "1",
         "cardAttack": "2",
-        "cardImage": "../../assets/cardImages/LevanedBread.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672796426250/Levaned_Bread.png",
         "cardType": "food"
     },
     {
         "cardName": "Gochuchung",
         "cardHealth": "2",
         "cardAttack": "1",
-        "cardImage": "../../assets/cardImages/Gochuchung.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671471038495/GOchuchung.png",
         "cardType": "food"
     },
     {
         "cardName": "SpaJeddi",
         "cardHealth": "2",
         "cardAttack": "2",
-        "cardImage": "../../assets/cardImages/Spajeddi.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718786986004/Spajeddi.png",
         "cardType": "food"
     },
     {
         "cardName": "Nguyentermelon",
         "cardHealth": "2",
         "cardAttack": "3",
-        "cardImage": "../../assets/cardImages/Nguyentermelon2.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673543028857/Nguyentermelon2.png",
         "cardType": "food"
     },
     {
         "cardName": "Mashed Votatoes",
         "cardHealth": "2",
         "cardAttack": "3",
-        "cardImage": "../../assets/cardImages/MashedVotatoes.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673291354193/Mashed_Votatoes.png",
         "cardType": "food"
     },
     {
         "cardName": "Manuelita Pizza",
         "cardHealth": "2",
         "cardAttack": "4",
-        "cardImage": "../../assets/cardImages/ManuelitaPizza.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673010352219/Manuelita_Pizza.png",
         "cardType": "food"
     },
     {
         "cardName": "PB & James",
         "cardHealth": "2",
         "cardAttack": "4",
-        "cardImage": "../../assets/cardImages/pbjames.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165674105049178/PB_and_James.png",
         "cardType": "food"
     },
     {
         "cardName": "Jerome Stick",
         "cardHealth": "1",
         "cardAttack": "5",
-        "cardImage": "../../assets/cardImages/JeromeStick.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672016285757/Jerome_Stick.png",
         "cardType": "food"
     },
     {
         "cardName": "Baked Kyle Chips",
         "cardHealth": "5",
         "cardAttack": "1",
-        "cardImage": "../../assets/cardImages/BakedKyleChips.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671018057770/Baked_Kyle_Chips.png",
         "cardType": "food"
     },
     {
         "cardName": "Salt",
         "cardHealth": "1",
         "cardAttack": "1",
-        "cardImage": "../../assets/cardImages/Salt.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718443036712/Salt.png",
         "cardType": "spice"
     },
     {
         "cardName": "Pepper",
         "cardHealth": "2",
         "cardAttack": "2",
-        "cardImage": "../../assets/cardImages/Pepper.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165717776158740/Pepper.png",
         "cardType": "spice"
     },
     {
         "cardName": "Paprika",
         "cardHealth": "3",
         "cardAttack": "3",
-        "cardImage": "../../assets/cardImages/Paprika.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673798877355/Paprika.png",
         "cardType": "spice"
     },
     {
         "cardName": "Saffron",
         "cardHealth": "5",
         "cardAttack": "5",
-        "cardImage": "../../assets/cardImages/Saffron.png",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718069755974/Saffron.png",
         "cardType": "spice"
     }
 ]
