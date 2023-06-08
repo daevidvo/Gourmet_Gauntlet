@@ -101,10 +101,11 @@ export default async function playGame() {
 
     // draws the cards and creates the buttons for play functions
     drawPhase();
+    stageNumberEl(currStage);
     roundStartButton();
     endGameButton();
     playerHealthEl(playerHealth);
-    stageNumberEl(currStage);
+    
 
     // ends game and returns the player to the home page
     document.getElementById('endGameButton').addEventListener('click', () => {
