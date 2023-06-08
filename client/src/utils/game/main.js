@@ -7,12 +7,14 @@ import createFields from "./createFields";
 import deleteGameButton from "./deleteGameButtons";
 import playerHealthEl from "./playerHealthEl";
 import stageNumberEl from "./stageNum";
+import createModal from "./roundEndModal";
+import showModal from "./showModal";
+import closeModal from "./closeModal";
 
 import anime from 'animejs';
 
 let currStage = 1;
 let playerHealth = 5;
-
 
 export default async function playGame() {
     // debugger;
@@ -79,7 +81,7 @@ export default async function playGame() {
     const displayCardOnField = (card) => {
         const field = document.getElementById('cardField');
         field.append(card);
-    };
+    };      
 
     async function drawPhase() {
         // create the cards and puts it into the playerHandDiv
@@ -114,6 +116,7 @@ export default async function playGame() {
 
     // battle itself
     function round(stageNum) {
+        
 
 
         if (stageNum) {
@@ -137,9 +140,13 @@ export default async function playGame() {
                     clearInterval(attackInterval);
 
                     deleteGameButton();
-
+                    createModal('YOU LOST :(', gameView);
+                    showModal();
                     // call playGame again
-                    playGame();
+                    setTimeout(() => {
+                        closeModal();
+                        playGame();
+                    }, 2000);
                     return;
                 }
 
@@ -149,7 +156,13 @@ export default async function playGame() {
                     currStage++;
                     deleteGameButton();
                     clearInterval(attackInterval);
-                    playGame();
+                    createModal('YOU WON :)', gameView);
+                    showModal();
+                    setTimeout(() => {
+                        closeModal();
+                        playGame();
+                    }, 2000);
+                    
                     return;
                 }
 
