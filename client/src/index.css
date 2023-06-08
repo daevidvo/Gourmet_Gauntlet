@@ -18,6 +18,11 @@ code {
     monospace;
 }
 
+#battle {
+  background-image: url("https://cdn.discordapp.com/attachments/1093280491312009238/1116420980525502534/Platebg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
 
 

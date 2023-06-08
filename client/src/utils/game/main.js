@@ -8,6 +8,7 @@ import deleteGameButton from "./deleteGameButtons";
 
 import anime from 'animejs';
 
+import deleteGameButton from "./deleteGameButtons";
 
 let currStage = 1
 let playerHealth = 5
