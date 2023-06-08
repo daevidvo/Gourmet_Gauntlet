@@ -181,11 +181,11 @@ export default async function playGame() {
                 playerCardHealth = playerCardHealth - enemyCardAttack
                 enemyCardHealth = enemyCardHealth - playerCardAttack
                 
-                if(enemyCardHealth < 1) {
+                if(!enemyCardHealth) {
                     enemyCard.remove()
                 }
                 
-                if(playerCardHealth < 1) {
+                if(!playerCardHealth) {
                     playerCard.remove()
                 }
 
