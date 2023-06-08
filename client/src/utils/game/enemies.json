@@ -11,14 +11,14 @@
             },
             {
                 "cardName": "Nguyentermelon",
-                "cardHealth": "3",
+                "cardHealth": "2",
                 "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1115466759596691507/Nguyentermelon.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Jerome Stick",
-                "cardHealth": "2",
+                "cardHealth": "1",
                 "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672016285757/Jerome_Stick.png",
                 "cardType": "food"
@@ -31,7 +31,7 @@
             {
                 "cardName": "SpaJeddi",
                 "cardHealth": "2",
-                "cardAttack": "1",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718786986004/Spajeddi.png",
                 "cardType": "food"
             },
@@ -44,15 +44,15 @@
             },
             {
                 "cardName": "Gochuchung",
-                "cardHealth": "3",
-                "cardAttack": "1",
+                "cardHealth": "1",
+                "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671471038495/GOchuchung.png",
                 "cardType": "food"
             },
             {
                 "cardName": "L-Evan-ed Bread",
-                "cardHealth": "3",
-                "cardAttack": "1",
+                "cardHealth": "2",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672796426250/Levaned_Bread.png",
                 "cardType": "food"
             }
@@ -63,22 +63,22 @@
         "gameCards": [
             {
                 "cardName": "Paprika",
-                "cardHealth": "1",
+                "cardHealth": "2",
                 "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673798877355/Paprika.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Saffron",
-                "cardHealth": "1",
-                "cardAttack": "3",
+                "cardHealth": "3",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718069755974/Saffron.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Salt",
-                "cardHealth": "1",
-                "cardAttack": "2",
+                "cardHealth": "4",
+                "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718443036712/Salt.png",
                 "cardType": "food"
             },
@@ -95,15 +95,15 @@
         "gameCards": [
             {
                 "cardName": "Gochuchung",
-                "cardHealth": "3",
+                "cardHealth": "4",
                 "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671471038495/GOchuchung.png",
                 "cardType": "food"
             },
             {
                 "cardName": "SpaJeddi",
-                "cardHealth": "2",
-                "cardAttack": "3",
+                "cardHealth": "5",
+                "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718786986004/Spajeddi.png",
                 "cardType": "food"
             },
@@ -116,7 +116,7 @@
             },
             {
                 "cardName": "Nguyentermelon",
-                "cardHealth": "1",
+                "cardHealth": "2",
                 "cardAttack": "4",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673543028857/Nguyentermelon2.png",
                 "cardType": "food"
@@ -129,28 +129,28 @@
             {
                 "cardName": "Baked Kyle Chips",
                 "cardHealth": "5",
-                "cardAttack": "2",
+                "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671018057770/Baked_Kyle_Chips.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Manuelita Pizza",
                 "cardHealth": "4",
-                "cardAttack": "2",
+                "cardAttack": "4",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673010352219/Manuelita_Pizza.png",
                 "cardType": "food"
             },
             {
                 "cardName": "PB & James",
                 "cardHealth": "3",
-                "cardAttack": "3",
+                "cardAttack": "5",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165674105049178/PB_and_James.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Jerome Stick",
-                "cardHealth": "2",
-                "cardAttack": "5",
+                "cardHealth": "6",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672016285757/Jerome_Stick.png",
                 "cardType": "food"
             }
@@ -161,8 +161,8 @@
         "gameCards": [
             {
                 "cardName": "Jerome Stick",
-                "cardHealth": "15",
-                "cardAttack": "1",
+                "cardHealth": "38",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672016285757/Jerome_Stick.png",
                 "cardType": "food"
             }
