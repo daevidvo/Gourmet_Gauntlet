@@ -2,30 +2,30 @@ import drawCards from "./drawCards";
 import createCardElements from "./createCardElements";
 import roundStartButton from "./roundStartButton";
 import endGameButton from "./endGameButton";
-import enemyData from './enemies.json'
+import enemyData from './enemies.json';
 import createFields from "./createFields";
 import deleteGameButton from "./deleteGameButtons";
 
 import anime from 'animejs';
 
-let currStage = 1
-let playerHealth = 5
+let currStage = 1;
+let playerHealth = 5;
 
 
 export default async function playGame() {
     // if player's health is less than 0, then we'd reroute them to the home page
     if (!playerHealth) {
-        window.location.assign('/')
+        window.location.assign('/');
     }
 
     let handArr = [];
     let fieldArray = [];
-    const br = document.createElement('br')
+    const br = document.createElement('br');
 
 
     // removes the previous play button
     if(document.getElementById('playButton')) {
-        document.getElementById('playButton').remove()
+        document.getElementById('playButton').remove();
     }
 
     
@@ -33,8 +33,8 @@ export default async function playGame() {
     const gameView = document.getElementById('battle')
 
     if(document.querySelectorAll('br')){
-        const elementsToRemove = document.querySelectorAll('br')
-        elementsToRemove.forEach((element) => element.remove())
+        const elementsToRemove = document.querySelectorAll('br');
+        elementsToRemove.forEach((element) => element.remove());
     }
 
     // once card is selected it is removed from handArr and added to fieldArr
@@ -51,20 +51,20 @@ export default async function playGame() {
     };
 
     // create view of the enemy field
-    createFields(gameView, 'enemyField')
+    createFields(gameView, 'enemyField');
 
-    createCardElements(enemyData[currStage-1].gameCards, document.getElementById('enemyField'), 'enemyCards')
+    createCardElements(enemyData[currStage-1].gameCards, document.getElementById('enemyField'), 'enemyCards');
 
     // create hr to separate the enemy and the player's hand
-    gameView.append(br)
+    gameView.append(br);
     
     // create the div for the player's card they want to play
-    createFields(gameView, 'cardField')
+    createFields(gameView, 'cardField');
 
-    gameView.append(br)
+    gameView.append(br);
 
     // create playerHand
-    createFields(gameView, 'playerHand')
+    createFields(gameView, 'playerHand');
 
     
     // append selected card to field
@@ -83,7 +83,7 @@ export default async function playGame() {
             card.addEventListener('click', () => {
                 // only allows four to be played on the field
                 if(document.getElementById('cardField').children.length > 3) {
-                    return
+                    return;
                 }
                 selectCard(card);
                 displayCardOnField(card);
@@ -98,7 +98,7 @@ export default async function playGame() {
 
     // ends game and returns the player to the home page
     document.getElementById('endGameButton').addEventListener('click', () => {
-        window.location.assign('/')
+        window.location.assign('/');
     })
 
     // battle itself
@@ -106,71 +106,67 @@ export default async function playGame() {
 
 
         if (stageNum) {
-            const playerHand = document.getElementById('playerHand')
+            const playerHand = document.getElementById('playerHand');
 
             // removes all of the elements in the playerHand
             while(playerHand.children[0]) {
-                playerHand.children[0].remove()
+                playerHand.children[0].remove();
             }
-    
-            
-    
-            
     
             let attackInterval = setInterval(() => {
                 // grab the first card from the enemy's and player's hand and their associated values
-                const enemyCard = document.getElementById('enemyField').children[0]
-                const playerCard = document.getElementById('cardField').children[0]
+                const enemyCard = document.getElementById('enemyField').children[0];
+                const playerCard = document.getElementById('cardField').children[0];
                 
                 // player lose or tie case
                 if (!playerCard || (!playerCard && !enemyCard)) {
-                    playerHealth--
+                    playerHealth--;
 
-                    console.log('player loses')
-                    clearInterval(attackInterval)
+                    console.log('player loses');
+                    clearInterval(attackInterval);
 
                     deleteGameButton();
 
                     // call playGame again
-                    playGame() 
-                    return
+                    playGame();
+                    return;
                 }
 
                 // player win case
                 if (!enemyCard) {
-                    console.log('player wins')
-                    currStage++
+                    console.log('player wins');
+                    currStage++;
                     deleteGameButton();
-                    clearInterval(attackInterval)
-                    playGame()
-                    return
+                    clearInterval(attackInterval);
+                    playGame();
+                    return;
                 }
 
 
-                let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1]
-                let enemyCardHealth = enemyCardHealthTextContent.textContent
-                enemyCardHealth = enemyCardHealth.split(' ')
-                enemyCardHealth = enemyCardHealth[1]
-                enemyCardHealth = Number(enemyCardHealth)
+                let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1];
+                let enemyCardHealth = enemyCardHealthTextContent.textContent;;
+                enemyCardHealth = enemyCardHealth.split(' ');
+                enemyCardHealth = enemyCardHealth[1];
+                enemyCardHealth = Number(enemyCardHealth);
         
-                let enemyCardAttackTextContent = enemyCard.children[1].children[1].textContent
-                let enemyCardAttack = enemyCardAttackTextContent
-                enemyCardAttack = enemyCardAttack.split(' ')
-                enemyCardAttack = enemyCardAttack[1]
-                enemyCardAttack = Number(enemyCardAttack)
+                let enemyCardAttackTextContent = enemyCard.children[1].children[1].textContent;
+                let enemyCardAttack = enemyCardAttackTextContent;
+                enemyCardAttack = enemyCardAttack.split(' ');
+                enemyCardAttack = enemyCardAttack[1];
+                enemyCardAttack = Number(enemyCardAttack);
         
                 
-                let playerCardHealthTextContent = playerCard.children[1].children[0].children[0].children[1]
-                let playerCardHealth = playerCardHealthTextContent.textContent
-                playerCardHealth = playerCardHealth.split(' ')
-                playerCardHealth = playerCardHealth[1]
-                playerCardHealth = Number(playerCardHealth)
+                let playerCardHealthTextContent = playerCard.children[1].children[0].children[0].children[1];
+                let playerCardHealth = playerCardHealthTextContent.textContent;
+                playerCardHealth = playerCardHealth.split(' ');
+                playerCardHealth = playerCardHealth[1];
+                playerCardHealth = Number(playerCardHealth);
                 
-                let playerCardAttackTextContent = playerCard.children[1].children[1].textContent
-                let playerCardAttack = playerCardAttackTextContent
-                playerCardAttack = playerCardAttack.split(' ')
-                playerCardAttack = playerCardAttack[1]
-                playerCardAttack = Number(playerCardAttack)
+                let playerCardAttackTextContent = playerCard.children[1].children[1].textContent;
+                let playerCardAttack = playerCardAttackTextContent;
+                playerCardAttack = playerCardAttack.split(' ');
+                playerCardAttack = playerCardAttack[1];
+                playerCardAttack = Number(playerCardAttack);
                 
                 
                 // base case if no more cards on either field
@@ -178,8 +174,8 @@ export default async function playGame() {
                 animateCardHit(playerCard, enemyCard);
                 // this is base case for seeing each card's health
                 
-                playerCardHealth = playerCardHealth - enemyCardAttack
-                enemyCardHealth = enemyCardHealth - playerCardAttack
+                playerCardHealth = playerCardHealth - enemyCardAttack;
+                enemyCardHealth = enemyCardHealth - playerCardAttack;
                 
                 if(!enemyCardHealth || enemyCardHealth < 1) {
                     setTimeout(() => {
@@ -193,11 +189,11 @@ export default async function playGame() {
                     }, 250);
                 }
 
-                console.log('enemy card ', enemyCardHealth, enemyCardAttack)
-                console.log('player card ', playerCardHealth, playerCardAttack)
+                console.log('enemy card ', enemyCardHealth, enemyCardAttack);
+                console.log('player card ', playerCardHealth, playerCardAttack);
 
-                playerCardHealthTextContent.textContent = "Health: " + playerCardHealth
-                enemyCardHealthTextContent.textContent = "Health: " + enemyCardHealth
+                playerCardHealthTextContent.textContent = "Health: " + playerCardHealth;
+                enemyCardHealthTextContent.textContent = "Health: " + enemyCardHealth;
 
 
             }, 1500);
@@ -230,6 +226,6 @@ export default async function playGame() {
       }
 
     document.getElementById('roundStartButton').addEventListener('click', () => {
-        round(currStage)
+        round(currStage);
     })
 }
