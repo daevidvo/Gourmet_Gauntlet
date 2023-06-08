@@ -1,4 +1,4 @@
-export default function createCardElements (cardsArr, gameView) {
+export default function createCardElements (cardsArr, parentElement) {
     
     cardsArr.forEach((data) => {
         const parentCardDiv = document.createElement('div')
@@ -43,6 +43,6 @@ export default function createCardElements (cardsArr, gameView) {
 
         parentCardDiv.append(cardImageDiv, cardContentDiv)
 
-        gameView.append(parentCardDiv)
+        parentElement.append(parentCardDiv)
     })
 }
