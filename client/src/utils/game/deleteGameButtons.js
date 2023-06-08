@@ -10,4 +10,6 @@ export default function deleteGameButton() {
   elementsToRemove.remove();
   elementsToRemove = document.getElementById("endGameButton");
   elementsToRemove.remove();
+  elementsToRemove = document.getElementById("playerHealth");
+  elementsToRemove.remove();
 }
