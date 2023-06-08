@@ -31,14 +31,12 @@ export default async function playGame() {
     // assigning battlefield so that we can use this later on
     const gameView = document.getElementById('battle')
 
-    if(gameView.childNodes) {
-        let childrenElementOfBattleField = gameView.childNodes
+    if(document.querySelectorAll('hr')){
+        let elementsToRemove = document.querySelectorAll('hr')
+        elementsToRemove.forEach((element) => element.remove())
 
-        childrenElementOfBattleField.forEach((element) => {
-            if(element === '<br>' || element === '<hr>') {
-                element.remove()
-            }
-        })
+        elementsToRemove = document.querySelectorAll('br')
+        elementsToRemove.forEach((element) => element.remove())
     }
 
     // once card is selected it is removed from handArr and added to fieldArr
