@@ -159,25 +159,27 @@ export default async function playGame() {
                 enemyCardHealth = enemyCardHealth.split(' ');
                 enemyCardHealth = enemyCardHealth[1];
                 enemyCardHealth = Number(enemyCardHealth);
+                console.log('enemy card health ', enemyCardHealth)
         
                 let enemyCardAttackTextContent = enemyCard.children[1].children[1].textContent;
                 let enemyCardAttack = enemyCardAttackTextContent;
                 enemyCardAttack = enemyCardAttack.split(' ');
                 enemyCardAttack = enemyCardAttack[1];
                 enemyCardAttack = Number(enemyCardAttack);
-        
                 
                 let playerCardHealthTextContent = playerCard.children[1].children[0].children[0].children[1];
                 let playerCardHealth = playerCardHealthTextContent.textContent;
                 playerCardHealth = playerCardHealth.split(' ');
                 playerCardHealth = playerCardHealth[1];
                 playerCardHealth = Number(playerCardHealth);
+                console.log('player card health ', playerCardHealth)
                 
                 let playerCardAttackTextContent = playerCard.children[1].children[1].textContent;
                 let playerCardAttack = playerCardAttackTextContent;
                 playerCardAttack = playerCardAttack.split(' ');
                 playerCardAttack = playerCardAttack[1];
                 playerCardAttack = Number(playerCardAttack);
+                
                 
                 
                 // base case if no more cards on either field
@@ -187,6 +189,8 @@ export default async function playGame() {
                 
                 playerCardHealth = playerCardHealth - enemyCardAttack;
                 enemyCardHealth = enemyCardHealth - playerCardAttack;
+                console.log('player attack')
+                console.log('enemy attack')
                 
                 if(!enemyCardHealth || enemyCardHealth < 1) {
                     setTimeout(() => {
@@ -194,7 +198,8 @@ export default async function playGame() {
                       }, 250);
                 }
                 
-                if (!playerCardHealth || enemyCardHealth < 1) {
+                // shoutout david chung for solving mega game breaking bug in this single line of code
+                if (!playerCardHealth || playerCardHealth < 1) {
                     setTimeout(() => {
                       playerCard.remove();
                     }, 250);
