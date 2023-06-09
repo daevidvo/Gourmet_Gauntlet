@@ -1,4 +1,4 @@
-const { Cards, Game, GameCards, User } = require("../models");
+const { User, Stats } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 
@@ -14,9 +14,15 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getGame: async (parent, { userId }) => {
-      return await Game.findOne({ userId: userId }).populate("userCards");
-    },
+    getPlayerStats: async (parent, args, context) => {
+      if (context.user){
+        const playerStats = await Stats.findOne({ userId: context.user._id })
+        .select("-__v");
+
+        return playerStats;
+      }
+      throw new AuthenticationError("No Stats Found for User");      
+    }
   },
   Mutation: {
     login: async (parent, { email, password }) => {

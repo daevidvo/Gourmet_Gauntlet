@@ -43,6 +43,14 @@ const typeDefs = gql`
         cardType: String!
     }
 
+    type PlayerStats {
+        _id: ID!
+        gameWins: Int!
+        gameLosses: Int!
+        matchesPlayed: Int!
+        userId: ID!
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -50,14 +58,12 @@ const typeDefs = gql`
 
     type Query {
         me: User
-        getAllCards: [Card]
-        getGame(userId: ID!): Game
+        getPlayerStats: PlayerStats
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
         signUp(username: String!, email: String!, password: String!): Auth
-        setGameProgress(userId: ID!, userStage: Int, userHealth: Int, userCards: [inputGameCards]): Game
     }
     `;
 
