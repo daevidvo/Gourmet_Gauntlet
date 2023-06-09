@@ -19,6 +19,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  stats: {
+    type: Schema.Types.ObjectId,
+    ref: "Stats",
+  },
 });
 
 userSchema.pre("save", async function (next) {
