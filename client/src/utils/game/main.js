@@ -157,7 +157,7 @@ export default async function playGame() {
                 }
 
                 // player win case
-                if (!enemyCard) {
+                if (!enemyCard && playerCard) {
                     console.log('player wins');
                     currStage++;
                     deleteGameButton();
