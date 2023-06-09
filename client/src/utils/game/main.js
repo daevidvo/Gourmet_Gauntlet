@@ -214,14 +214,14 @@ export default async function playGame() {
                 if (!enemyCardHealth || enemyCardHealth < 1) {
                     setTimeout(() => {
                         enemyCard.remove();
-                    }, 250);
+                    }, 500);
                 }
 
                 // shoutout david chung for solving mega game breaking bug in this single line of code
                 if (!playerCardHealth || playerCardHealth < 1) {
                     setTimeout(() => {
                         playerCard.remove();
-                    }, 250);
+                    }, 500);
                 }
 
                 console.log('enemy card ', enemyCardHealth, enemyCardAttack);
@@ -242,8 +242,8 @@ export default async function playGame() {
         const enemyCardPosition = enemyCard.getBoundingClientRect();
 
         const timeline = anime.timeline({
-            easing: 'linear',
-            duration: 250
+            easing: 'cubicBezier(0.065, 0.040, 1.000, -0.115)',
+            duration: 200
         });
 
         timeline.add({
@@ -256,7 +256,7 @@ export default async function playGame() {
             targets: playerCard,
             translateX: 0,
             translateY: 0,
-            delay: 500
+            delay: 225
         });
     }
 
