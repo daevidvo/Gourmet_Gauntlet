@@ -1,7 +1,11 @@
 import React from "react";
-import 'chart.js'
+import Chart from 'chart.js/auto';
+import { CategoryScale } from 'chart.js';
+import BarChart from './barChart';
 
 function EndScreen() {
+
+Chart.register(CategoryScale);
 
 
   return (
@@ -11,6 +15,7 @@ function EndScreen() {
           <div className="is-centered">
             <p className="title">Thank you for playing</p>
             <p className="subtitle">Small subtitle</p>
+            <BarChart width="400" height="400"/>
           </div>
         </div>
       </div>
@@ -19,3 +24,4 @@ function EndScreen() {
 }
 
 export default EndScreen;
+
