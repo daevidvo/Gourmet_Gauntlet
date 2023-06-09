@@ -20,6 +20,7 @@ import Profile from "./pages/Profile";
 import AboutUs from "./pages/AboutUs";
 import SignUp from "./pages/Signup";
 import Battle from "./pages/Battle";
+import EndScreen from "./components/EndScreen";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -53,15 +54,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/battle" element={<Battle />} />
             <Route path="/login" element={<Login />} />
-            {/* <Route 
-                path='/profile'
-                element={<Profile/>}
-            /> */}
+            <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
-            {/* <Route 
-                path='/about-us'
-                element={<AboutUs/>}
-            /> */}
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/gameover" element={<EndScreen />} />
           </Routes>
           <Footer />
         </div>
