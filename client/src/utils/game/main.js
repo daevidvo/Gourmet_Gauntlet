@@ -26,8 +26,8 @@ export default async function playGame() {
     // if player's health is less than 0, then we'd reroute them to the home page
     if (!playerHealth) {
         //TODO: add game over screen here
-        createModal();
-        showModal('NO MORE LIVES!!!', gameView);
+        createModal('NO MORE LIVES!!!', gameView);
+        showModal();
         setTimeout(() => {
             closeModal();
             window.location.assign('/');
@@ -157,7 +157,7 @@ export default async function playGame() {
                 }
 
                 // player win case
-                if (!enemyCard) {
+                if (!enemyCard && playerCard) {
                     console.log('player wins');
                     currStage++;
                     deleteGameButton();
