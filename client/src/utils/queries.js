@@ -8,3 +8,13 @@ export const GET_ME = gql`
         }
     }
 `;
+
+export const GET_PLAYER_STATS = gql`
+    query getPlayerStats{
+        getPlayerStats {
+            matchesPlayed
+            gameWins
+            gameLosses
+        }
+    }
+`
