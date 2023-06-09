@@ -248,14 +248,14 @@
         "cardName": "Sancheese",
         "cardHealth": "1",
         "cardAttack": "2",
-        "cardImage": "",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116595882859700275/Sancheese.png",
         "cardType": "food"
     },
     {
         "cardName": "Hamturk",
         "cardHealth": "3",
         "cardAttack": "3",
-        "cardImage": "",
+        "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116600138270527518/Hamturk.png",
         "cardType": "food"
     },
     {
