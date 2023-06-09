@@ -8,7 +8,7 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  #battle {
+  body {
     transform: rotate(90deg);
   }
 }
