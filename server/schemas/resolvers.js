@@ -14,9 +14,6 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getAllCards: async () => {
-      return await Cards.find({});
-    },
     getGame: async (parent, { userId }) => {
       return await Game.findOne({ userId: userId }).populate("userCards");
     },
@@ -45,27 +42,6 @@ const resolvers = {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
-    },
-    setGameProgress: async (
-      parent,
-      { userStage, userHealth, userCards }, context
-    ) => {
-      const game = await Game.findOneAndUpdate(
-        { userId: context.user._id },
-        { userStage: userStage, userHealth: userHealth, userCards: userCards },
-        { new: true }
-      ).populate("userCards");
-
-      if (!game) {
-        return await Game.create({
-          userId: context.user._id,
-          userStage: userStage,
-          userHealth: userHealth,
-          userCards: userCards,
-        });
-      }
-
-      return game;
     },
   },
 };
