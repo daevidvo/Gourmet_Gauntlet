@@ -29,7 +29,6 @@ const Login = () => {
       console.log(data);
 
       Auth.login(data.login.token);
-      
     } catch (e) {
       console.error(e);
     }
@@ -50,53 +49,45 @@ const Login = () => {
                 <h4 className="card-header-title">Login</h4>
               </header>
               <div className="card-content">
-                {/* {data ? (
-                  <p>
-                    Success! You may now head{" "}
-                    <Link to="/">back to the homepage.</Link>
-                  </p>
-                ) : ( */}
-                  <form onSubmit={handleFormSubmit}>
-                    <div className="field">
-                      <label className="label">Your email</label>
-                      <div className="control">
-                        <input
-                          className="input"
-                          type="email"
-                          placeholder="Your email"
-                          name="email"
-                          value={formState.email}
-                          onChange={handleChange}
-                        />
-                      </div>
+                <form onSubmit={handleFormSubmit}>
+                  <div className="field">
+                    <label className="label">Your email</label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        type="email"
+                        placeholder="Your email"
+                        name="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                      />
                     </div>
-                    <div className="field">
-                      <label className="label">Password</label>
-                      <div className="control">
-                        <input
-                          className="input"
-                          type="password"
-                          placeholder="******"
-                          name="password"
-                          value={formState.password}
-                          onChange={handleChange}
-                        />
-                      </div>
+                  </div>
+                  <div className="field">
+                    <label className="label">Password</label>
+                    <div className="control">
+                      <input
+                        className="input"
+                        type="password"
+                        placeholder="******"
+                        name="password"
+                        value={formState.password}
+                        onChange={handleChange}
+                      />
                     </div>
-                    <div className="field">
-                      <div className="control">
-                        <button
-                          className="button is-info is-fullwidth"
-                          style={{ cursor: "pointer" }}
-                          type="submit"
-                        >
-                          Submit
-                        </button>
-                      </div>
+                  </div>
+                  <div className="field">
+                    <div className="control">
+                      <button
+                        className="button is-info is-fullwidth"
+                        style={{ cursor: "pointer" }}
+                        type="submit"
+                      >
+                        Submit
+                      </button>
                     </div>
-                  </form>
-                {/* )} */}
-
+                  </div>
+                </form>
                 {error && (
                   <div className="notification is-danger">{error.message}</div>
                 )}
