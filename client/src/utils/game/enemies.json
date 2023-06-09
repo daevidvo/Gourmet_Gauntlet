@@ -36,14 +36,14 @@
         "gameCards": [
             {
                 "cardName": "Purple Didrik",
-                "cardHealth": "1",
+                "cardHealth": "2",
                 "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116504076667068517/purple-didrik.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Gumbro",
-                "cardHealth": "2",
+                "cardHealth": "3",
                 "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116496129048203355/Gumbro.png",
                 "cardType": "food"
@@ -51,14 +51,14 @@
             {
                 "cardName": "Amandarin",
                 "cardHealth": "1",
-                "cardAttack": "2",
+                "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116495283849793578/Amandarin.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Christoaster Strudel",
                 "cardHealth": "2",
-                "cardAttack": "1",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116502996818341908/Christoaster-Strudel.png",
                 "cardType": "food"
             }
@@ -70,28 +70,28 @@
             {
                 "cardName": "Higa-C",
                 "cardHealth": "2",
-                "cardAttack": "2",
+                "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116517986824634388/Higa-C.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Sabeen Burrito",
                 "cardHealth": "3",
-                "cardAttack": "1",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116765612480409731/Sabeen_Burrito.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Sancheese",
                 "cardHealth": "1",
-                "cardAttack": "3",
+                "cardAttack": "4",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116595882859700275/Sancheese.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Chicken Kakaage",
-                "cardHealth": "2",
-                "cardAttack": "2",
+                "cardHealth": "4",
+                "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116509603711160361/Chicken_Kakaage.png",
                 "cardType": "food"
             }
@@ -102,28 +102,28 @@
         "gameCards": [
             {
                 "cardName": "Sobolevskayenne",
-                "cardHealth": "2",
+                "cardHealth": "3",
                 "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116501821414965338/Sobolevskayenne.png",
                 "cardType": "food"
             },
             {
                 "cardName": "S-Afi-ron",
-                "cardHealth": "3",
-                "cardAttack": "2",
+                "cardHealth": "5",
+                "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116503252922540062/S-afi-ron.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Scarl-t",
-                "cardHealth": "4",
-                "cardAttack": "1",
+                "cardHealth": "2",
+                "cardAttack": "4",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116502223560646726/Scarl-t.png",
                 "cardType": "food"
             },
             {   "cardName": "Jepper",
-                "cardHealth": "1",
-                "cardAttack": "4",
+                "cardHealth": "4",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116502082950803566/Jepper.png",
                 "cardType": "food"
             }
@@ -135,28 +135,28 @@
             {
                 "cardName": "Lam Chops",
                 "cardHealth": "5",
-                "cardAttack": "3",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116503631806607370/Lam_Chops.png",
                 "cardType": "food"
             },
             {
                 "cardName": "L-Evan-ed Bread",
                 "cardHealth": "4",
-                "cardAttack": "4",
+                "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672796426250/Levaned_Bread.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Cassava Cake",
                 "cardHealth": "3",
-                "cardAttack": "5",
+                "cardAttack": "4",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116501329364398181/Cassanva-Cake.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Albersunny-D",
                 "cardHealth": "6",
-                "cardAttack": "2",
+                "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116499012204384286/Albersunny-D.png",
                 "cardType": "food"
             }
@@ -201,28 +201,28 @@
             {
                 "cardName": "Baker-d Ziti",
                 "cardHealth": "5",
-                "cardAttack": "3",
+                "cardAttack": "4",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116516492700303420/Baker-d_Ziti.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Qui-Noah",
                 "cardHealth": "4",
-                "cardAttack": "4",
+                "cardAttack": "5",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116766784008224869/Qui-noah.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Macaroys",
-                "cardHealth": "3",
-                "cardAttack": "5",
+                "cardHealth": "7",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116517329103224892/Macaroys.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Hamturk",
-                "cardHealth": "6",
-                "cardAttack": "2",
+                "cardHealth": "2",
+                "cardAttack": "7",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116600138270527518/Hamturk.png",
                 "cardType": "food"
             }
@@ -233,29 +233,29 @@
         "gameCards": [
             {
                 "cardName": "Shea-ved Ice",
-                "cardHealth": "5",
-                "cardAttack": "3",
+                "cardHealth": "3",
+                "cardAttack": "8",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116602284093210715/Shea-ved_Ice.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Suchayams",
-                "cardHealth": "4",
-                "cardAttack": "4",
+                "cardHealth": "9",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116604490473279528/Suchayams.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Tamaraind",
-                "cardHealth": "3",
-                "cardAttack": "5",
+                "cardHealth": "1",
+                "cardAttack": "10",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116610347667824681/Tamaraind.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Pickled Tollive",
-                "cardHealth": "6",
-                "cardAttack": "2",
+                "cardHealth": "8",
+                "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116617440697253988/Pickled_Tollive.png",
                 "cardType": "food"
             }
@@ -266,29 +266,29 @@
         "gameCards": [
             {
                 "cardName": "Gochuchung",
-                "cardHealth": "4",
-                "cardAttack": "2",
+                "cardHealth": "10",
+                "cardAttack": "1",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671471038495/GOchuchung.png",
                 "cardType": "food"
             },
             {
                 "cardName": "SpaJeddi",
-                "cardHealth": "5",
-                "cardAttack": "1",
+                "cardHealth": "8",
+                "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718786986004/Spajeddi.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Mashed Votatoes",
-                "cardHealth": "3",
-                "cardAttack": "3",
+                "cardHealth": "9",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673291354193/Mashed_Votatoes.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Nguyentermelon",
-                "cardHealth": "2",
-                "cardAttack": "4",
+                "cardHealth": "1",
+                "cardAttack": "10",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1115466759596691507/Nguyentermelon.png",
                 "cardType": "food"
             }
@@ -299,29 +299,29 @@
         "gameCards": [
             {
                 "cardName": "Baked Kyle Chips",
-                "cardHealth": "5",
+                "cardHealth": "9",
                 "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671018057770/Baked_Kyle_Chips.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Manuelita Pizza",
-                "cardHealth": "4",
-                "cardAttack": "4",
+                "cardHealth": "3",
+                "cardAttack": "9",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673010352219/Manuelita_Pizza.png",
                 "cardType": "food"
             },
             {
                 "cardName": "PB & James",
-                "cardHealth": "3",
-                "cardAttack": "5",
+                "cardHealth": "10",
+                "cardAttack": "2",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165674105049178/PB_and_James.png",
                 "cardType": "food"
             },
             {
                 "cardName": "Jerome Stick",
-                "cardHealth": "6",
-                "cardAttack": "2",
+                "cardHealth": "2",
+                "cardAttack": "10",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672016285757/Jerome_Stick.png",
                 "cardType": "food"
             }
@@ -332,8 +332,8 @@
         "gameCards": [
             {
                 "cardName": "Enokohort",
-                "cardHealth": "38",
-                "cardAttack": "2",
+                "cardHealth": "45",
+                "cardAttack": "3",
                 "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116488968033275904/Enokohort.png",
                 "cardType": "food"
             }
