@@ -8,106 +8,106 @@
     },
     {
         "cardName": "L-Evan-ed Bread",
-        "cardHealth": "3",
-        "cardAttack": "5",
+        "cardHealth": "7",
+        "cardAttack": "3",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672796426250/Levaned_Bread.png",
         "cardType": "food"
     },
     {
         "cardName": "Gochuchung",
-        "cardHealth": "5",
+        "cardHealth": "7",
         "cardAttack": "2",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671471038495/GOchuchung.png",
         "cardType": "food"
     },
     {
         "cardName": "SpaJeddi",
-        "cardHealth": "4",
-        "cardAttack": "4",
+        "cardHealth": "5",
+        "cardAttack": "6",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718786986004/Spajeddi.png",
         "cardType": "food"
     },
     {
         "cardName": "Nguyentermelon",
         "cardHealth": "5",
-        "cardAttack": "3",
+        "cardAttack": "5",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673543028857/Nguyentermelon2.png",
         "cardType": "food"
     },
     {
         "cardName": "Mashed Votatoes",
         "cardHealth": "6",
-        "cardAttack": "3",
+        "cardAttack": "7",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673291354193/Mashed_Votatoes.png",
         "cardType": "food"
     },
     {
         "cardName": "Manuelita Pizza",
         "cardHealth": "3",
-        "cardAttack": "4",
+        "cardAttack": "3",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165673010352219/Manuelita_Pizza.png",
         "cardType": "food"
     },
     {
         "cardName": "PB & James",
-        "cardHealth": "2",
+        "cardHealth": "5",
         "cardAttack": "5",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165674105049178/PB_and_James.png",
         "cardType": "food"
     },
     {
         "cardName": "Jerome Stick",
-        "cardHealth": "6",
-        "cardAttack": "6",
+        "cardHealth": "7",
+        "cardAttack": "7",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165672016285757/Jerome_Stick.png",
         "cardType": "food"
     },
     {
         "cardName": "Baked Kyle Chips",
-        "cardHealth": "5",
-        "cardAttack": "2",
+        "cardHealth": "4",
+        "cardAttack": "4",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165671018057770/Baked_Kyle_Chips.png",
         "cardType": "food"
     },
     {
         "cardName": "Scarltt",
-        "cardHealth": "1",
-        "cardAttack": "1",
+        "cardHealth": "2",
+        "cardAttack": "2",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116502223560646726/Scarl-t.png",
         "cardType": "spice"
     },
     {
         "cardName": "Jepper",
-        "cardHealth": "1",
-        "cardAttack": "1",
+        "cardHealth": "2",
+        "cardAttack": "2",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116502082950803566/Jepper.png",
         "cardType": "spice"
     },
     {
         "cardName": "Sobolevskayenne",
-        "cardHealth": "4",
-        "cardAttack": "6",
+        "cardHealth": "3",
+        "cardAttack": "8",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116501821414965338/Sobolevskayenne.png",
         "cardType": "spice"
     },
     {
         "cardName": "S-Afi-ron",
-        "cardHealth": "5",
-        "cardAttack": "5",
+        "cardHealth": "4",
+        "cardAttack": "4",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116165718069755974/Saffron.png",
         "cardType": "spice"
     },
     {
         "cardName": "Gumbro",
-        "cardHealth": "4",
+        "cardHealth": "8",
         "cardAttack": "1",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116496129048203355/Gumbro.png",
         "cardType": "food"
     },
     {
         "cardName": "Bahalava",
-        "cardHealth": "4",
-        "cardAttack": "2",
+        "cardHealth": "2",
+        "cardAttack": "3",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116497712410525827/Bahaklava.png",
         "cardType": "food"
     },
@@ -127,8 +127,8 @@
     },
     {
         "cardName": "Cassava Cake",
-        "cardHealth": "4",
-        "cardAttack": "3",
+        "cardHealth": "5",
+        "cardAttack": "2",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116501329364398181/Cassanva-Cake.png",
         "cardType": "food"
     },
@@ -141,22 +141,22 @@
     },
     {
         "cardName": "Lam Chops",
-        "cardHealth": "2",
-        "cardAttack": "3",
+        "cardHealth": "5",
+        "cardAttack": "1",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116503631806607370/Lam_Chops.png",
         "cardType": "food"
     },
     {
         "cardName": "Purple Didrik",
-        "cardHealth": "2",
-        "cardAttack": "2",
+        "cardHealth": "3",
+        "cardAttack": "3",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116504076667068517/purple-didrik.png",
         "cardType": "food"
     },
     {
         "cardName": "Eugenelato",
-        "cardHealth": "1",
-        "cardAttack": "3",
+        "cardHealth": "4",
+        "cardAttack": "4",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116504765577318440/Eugenelato.png",
         "cardType": "food"
     },
@@ -247,7 +247,7 @@
     {
         "cardName": "Sancheese",
         "cardHealth": "1",
-        "cardAttack": "2",
+        "cardAttack": "3",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116595882859700275/Sancheese.png",
         "cardType": "food"
     },
@@ -274,8 +274,8 @@
     },
     {
         "cardName": "Tamaraind",
-        "cardHealth": "1",
-        "cardAttack": "2",
+        "cardHealth": "5",
+        "cardAttack": "1",
         "cardImage": "https://cdn.discordapp.com/attachments/1093280491312009238/1116610347667824681/Tamaraind.png",
         "cardType": "food"
     },

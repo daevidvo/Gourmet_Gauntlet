@@ -18,7 +18,7 @@ export default async function drawCards() {
 
   let handArr = [];
   for (let x = 0; x < 5; x += 1) {
-    let randomNum = Math.floor(Math.random() * 42);
+    let randomNum = Math.floor(Math.random() * 41);
 
     handArr.push(cardsArray[randomNum]);
   }
