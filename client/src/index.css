@@ -10,6 +10,12 @@ body {
 @media screen and (max-width: 768px) {
   body {
     transform: rotate(90deg);
+    transform-origin: bottom right;
+    position: absolute;
+    top: -100vh;
+    right: 0;
+    height: 100vw;
+    width: 100vh;
   }
 }
 
@@ -23,10 +29,3 @@ code {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-
-
-
-
-
-
-

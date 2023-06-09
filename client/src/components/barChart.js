@@ -3,7 +3,8 @@ import { useQuery } from '@apollo/client';
 import { GET_PLAYER_STATS } from '../utils/queries';
 
 
-export const BarChart = ({ chartData }) => {
+
+const BarChart = ({ chartData }) => {
 
 const { loading, data } = useQuery(GET_PLAYER_STATS);
 if (loading) {
@@ -52,3 +53,5 @@ const playerData = data?.getPlayerStats || [];
         </div>
     )
 }
+
+export default BarChart
