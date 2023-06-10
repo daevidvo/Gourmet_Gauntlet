@@ -7,15 +7,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 @media screen and (max-width: 768px) {
   body {
-    transform: rotate(90deg);
-    transform-origin: bottom right;
-    position: absolute;
-    top: -100vh;
-    right: 0;
-    height: 100vw;
+    overflow: hidden;
+  }
+
+  #root {
     width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    position:absolute;
+    top: -100vw;
+    overflow: auto;
+  }
+
+  .card {
+    max-width: 25% !important;
   }
 }
 
