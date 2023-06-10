@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect( 'mongodb://127.0.0.1:27017/GG_DB');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/GG_DB');
 
 module.exports = mongoose.connection;
