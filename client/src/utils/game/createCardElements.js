@@ -2,7 +2,7 @@ export default function createCardElements (cardsArr, parentElement, customClass
     
     cardsArr.forEach((data) => {
         const parentCardDiv = document.createElement('div')
-        parentCardDiv.classList.add('card', 'is-2', 'parentPlayerCardDiv', 'column', `${customClass}`)
+        parentCardDiv.classList.add('card', 'is-2', 'parentPlayerCardDiv', 'column', 'm-1', `${customClass}`)
 
         const cardImageDiv = document.createElement('div')
         cardImageDiv.classList.add('card-image')

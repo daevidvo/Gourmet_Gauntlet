@@ -5,6 +5,8 @@ import { UPDATE_USER } from "../utils/mutations";
 import showModal from "../utils/game/showModal";
 import createModal from "../utils/game/roundEndModal";
 import closeModal from "../utils/game/closeModal";
+import "chart.js";
+import BarChart from "../components/barChart";
 
 function Profile() {
   const { loading, data: getMeData } = useQuery(GET_ME);
@@ -17,10 +19,10 @@ function Profile() {
   });
 
   useEffect(() => {
-    setFormState({email: email, username: username})
-  }, [loading])
+    setFormState({ email: email, username: username });
+  }, [getMeData]);
 
-  const [updateUser, { error, data: mutationData }] = useMutation(UPDATE_USER);
+  const [updateUser, { error }] = useMutation(UPDATE_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,11 +35,11 @@ function Profile() {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await updateUser({
+      await updateUser({
         variables: { ...formState },
       });
 
-      createModal('Profile Updated', document.getElementById('root'));
+      createModal("Profile Updated", document.getElementById("root"));
       showModal();
 
       setTimeout(() => {
@@ -58,7 +60,6 @@ function Profile() {
                 <div>Loading...</div>
               ) : (
                 <>
-                
                   <header className="card-header bg-dark text-light p-2">
                     <h4 className="card-header-title">Update Profile</h4>
                   </header>
@@ -110,6 +111,16 @@ function Profile() {
                   </div>
                 </>
               )}
+            </div>
+          </div>
+          <div className="column is-4">
+            <div className="card">
+              <header className="card-header bg-dark text-light p-2">
+                <h4 className="card-header-title">Update Profile</h4>
+              </header>
+              <div className="card-content">
+                <BarChart width="400" height="400" />
+              </div>
             </div>
           </div>
         </div>

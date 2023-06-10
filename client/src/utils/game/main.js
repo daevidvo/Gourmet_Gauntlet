@@ -1,17 +1,15 @@
 import drawCards from "./drawCards";
 import createCardElements from "./createCardElements";
-import roundStartButton from "./roundStartButton";
-import endGameButton from "./endGameButton";
 import enemyData from './enemies.json';
 import createFields from "./createFields";
 import deleteGameButton from "./deleteGameButtons";
-import playerHealthEl from "./playerHealthEl";
-import stageNumberEl from "./stageNum";
 import createModal from "./roundEndModal";
 import showModal from "./showModal";
 import closeModal from "./closeModal";
-
-import anime from 'animejs';
+import displayCardOnField from "./displayCardOnField";
+import selectCard from "./selectCard";
+import animateCardHit from "./animateCardHit";
+import createGameButtons from "./createGameButtons";
 
 let currStage = 1;
 let playerHealth = 5;
@@ -23,9 +21,8 @@ export default async function playGame() {
     // assigning battlefield so that we can use this later on
     const gameView = document.getElementById('battle')
 
-    // if player's health is less than 0, then we'd reroute them to the home page
+    // if player's health is less than 0, then we'd reroute them to the gameover page
     if (!playerHealth) {
-        //TODO: add game over screen here
         createModal('NO MORE LIVES!!!', gameView);
         showModal();
         setTimeout(() => {
@@ -34,10 +31,7 @@ export default async function playGame() {
         }, 2000)
     }
 
-    let handArr = [];
-    let fieldArray = [];
     const br = document.createElement('br');
-
 
     // removes the previous play button
     if (document.getElementById('playButton')) {
@@ -48,27 +42,16 @@ export default async function playGame() {
         document.getElementById('stageNumber').remove();
     }
 
+    //removes br elements from previous round
     if (document.querySelectorAll('br')) {
         const elementsToRemove = document.querySelectorAll('br');
         elementsToRemove.forEach((element) => element.remove());
     }
 
-    // once card is selected it is removed from handArr and added to fieldArr
-    const selectCard = (card) => {
-        if (fieldArray.length < 4) {
-            fieldArray.push(card);
-
-            // this isn't doing anything right now cause handArr is empty
-            handArr.splice(handArr.indexOf(card), 1);
-        }
-
-        // remove HTML card from displayed hand
-        card.remove();
-    };
-
     // create view of the enemy field
     createFields(gameView, 'enemyField');
 
+    // loads enemy data and creates their cards
     createCardElements(enemyData[currStage - 1].gameCards, document.getElementById('enemyField'), 'enemyCards');
 
     // create hr to separate the enemy and the player's hand
@@ -82,26 +65,23 @@ export default async function playGame() {
     // create playerHand
     createFields(gameView, 'playerHand');
 
-
-    // append selected card to field
-    const displayCardOnField = (card) => {
-        const field = document.getElementById('cardField');
-        field.append(card);
-    };
-
     async function drawPhase() {
         // create the cards and puts it into the playerHandDiv
         let handArr = await drawCards();
         createCardElements(handArr, document.getElementById('playerHand'), 'playerHandCard');
 
-        // moves the cards to the field
+        // event listeners for moving the cards to the field
         document.querySelectorAll('.playerHandCard').forEach((card) => {
             card.addEventListener('click', () => {
-                // only allows four to be played on the field
+                // only allows four cards to be played on the field
                 if (document.getElementById('cardField').children.length > 3) {
                     return;
                 }
+
+                // once card is selected it is removed from handArr and added to fieldArr
                 selectCard(card);
+
+                // append selected card to field
                 displayCardOnField(card);
             });
         });
@@ -109,23 +89,13 @@ export default async function playGame() {
 
     // draws the cards and creates the buttons for play functions
     drawPhase();
-    stageNumberEl(currStage);
-    roundStartButton();
-    endGameButton();
-    playerHealthEl(playerHealth);
-
-
-    // ends game and returns the player to the home page
-    document.getElementById('endGameButton').addEventListener('click', () => {
-        window.location.assign('/');
-    })
+    createGameButtons('stageNum', gameView, currStage);
+    createGameButtons('roundStartButton', gameView);
+    createGameButtons('endGameButton', gameView);
+    createGameButtons('playerHealthElement', gameView, playerHealth);
 
     // battle itself
-    function round(stageNum) {
-
-
-
-        if (stageNum) {
+    function round() {
             const playerHand = document.getElementById('playerHand');
 
             // removes all of the elements in the playerHand
@@ -172,7 +142,7 @@ export default async function playGame() {
                     return;
                 }
 
-
+                // DOM traversal to grab player and enemy health/attack
                 let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1];
                 let enemyCardHealth = enemyCardHealthTextContent.textContent;;
                 enemyCardHealth = enemyCardHealth.split(' ');
@@ -199,25 +169,21 @@ export default async function playGame() {
                 playerCardAttack = playerCardAttack[1];
                 playerCardAttack = Number(playerCardAttack);
 
-
-
-                // base case if no more cards on either field
-
                 animateCardHit(playerCard, enemyCard);
-                // this is base case for seeing each card's health
 
                 playerCardHealth = playerCardHealth - enemyCardAttack;
+                // shout out david chung for solving mega game breaking bug in this single line of code
                 enemyCardHealth = enemyCardHealth - playerCardAttack;
                 console.log('player attack')
                 console.log('enemy attack')
 
+                // sometimes Number() will randomly pop out a NaN during early development so this is why we have both falsy and < 1 checkers
                 if (!enemyCardHealth || enemyCardHealth < 1) {
                     setTimeout(() => {
                         enemyCard.remove();
                     }, 500);
                 }
 
-                // shoutout david chung for solving mega game breaking bug in this single line of code
                 if (!playerCardHealth || playerCardHealth < 1) {
                     setTimeout(() => {
                         playerCard.remove();
@@ -227,40 +193,18 @@ export default async function playGame() {
                 console.log('enemy card ', enemyCardHealth, enemyCardAttack);
                 console.log('player card ', playerCardHealth, playerCardAttack);
 
+                // updating cards to reflect dmg/health
                 playerCardHealthTextContent.textContent = "Health: " + playerCardHealth;
                 enemyCardHealthTextContent.textContent = "Health: " + enemyCardHealth;
 
-
             }, 1500);
-        }
-
-
-    }
-
-    function animateCardHit(playerCard, enemyCard) {
-        const playerCardPosition = playerCard.getBoundingClientRect();
-        const enemyCardPosition = enemyCard.getBoundingClientRect();
-
-        const timeline = anime.timeline({
-            easing: 'cubicBezier(0.065, 0.040, 1.000, -0.115)',
-            duration: 200
-        });
-
-        timeline.add({
-            targets: playerCard,
-            translateX: enemyCardPosition.left - playerCardPosition.left,
-            translateY: enemyCardPosition.top - playerCardPosition.top,
-        });
-
-        timeline.add({
-            targets: playerCard,
-            translateX: 0,
-            translateY: 0,
-            delay: 225
-        });
     }
 
     document.getElementById('roundStartButton').addEventListener('click', () => {
         round(currStage);
+    })
+
+    document.getElementById('endGameButton').addEventListener('click', () => {
+        window.location.assign('/');
     })
 }

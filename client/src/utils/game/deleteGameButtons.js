@@ -12,4 +12,6 @@ export default function deleteGameButton() {
   elementsToRemove.remove();
   elementsToRemove = document.getElementById("playerHealth");
   elementsToRemove.remove();
+  elementsToRemove = document.getElementById("stageNumber");
+  elementsToRemove.remove();
 }
