@@ -19,13 +19,10 @@ const Login = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
       const { data } = await login({
         variables: { ...formState },
       });
-
-      console.log(data);
 
       Auth.login(data.login.token);
     } catch (e) {

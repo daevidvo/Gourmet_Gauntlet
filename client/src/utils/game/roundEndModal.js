@@ -1,4 +1,4 @@
-export default function createModal(text, gameView) {
+export default function createModal(text, parentElement) {
     const modal = document.createElement('div');
     modal.setAttribute('id','roundEndModal');
     modal.classList.add('modal');
@@ -19,5 +19,5 @@ export default function createModal(text, gameView) {
     modalCardBody.append(modalContent);
     modalCard.append(modalCardBody);
     modal.append(modalBack, modalCard);
-    gameView.append(modal);
+    parentElement.append(modal);
   }

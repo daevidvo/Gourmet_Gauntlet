@@ -23,3 +23,15 @@ export const SIGNUP_USER = gql`
     }
   }
 `;
+
+export const UPDATE_USER = gql`
+  mutation updateUser($username: String!, $email: String!) {
+    updateUser(username: $username, email: $email) {
+      token
+      user {
+        username
+        email
+      }
+    }
+  }
+`
