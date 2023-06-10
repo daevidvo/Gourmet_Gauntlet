@@ -41,7 +41,7 @@ const Battle = () => {
   return (
     <div id="battle" className="hero is-fullheight">
         <div className="buttons is-centered">
-            <button className="button is-danger" id="playButton" onClick={playGame}>Play</button>
+            <button className="button is-danger is-large mt-4" id="playButton" onClick={playGame}>Play</button>
         </div>
     </div>
   );

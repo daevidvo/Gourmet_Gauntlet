@@ -3,7 +3,7 @@ export default function roundStartButton() {
 
     // makes button
     const startRoundButton = document.createElement('button')
-    startRoundButton.classList.add('button', 'is-success')
+    startRoundButton.classList.add('button', 'is-success', 'mt-4')
     startRoundButton.setAttribute('id', 'roundStartButton')
     startRoundButton.textContent = 'Start Round'
 
