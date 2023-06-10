@@ -1,12 +1,19 @@
 import React from "react";
-import Chart from 'chart.js/auto';
-import { CategoryScale } from 'chart.js';
-import BarChart from './barChart';
+import "chart.js/auto";
+import BarChart from "./barChart";
+import { useQuery } from "@apollo/client";
+import { GET_ME } from "../utils/queries";
 
 function EndScreen() {
+  const { loading, data } = useQuery(GET_ME);
 
-Chart.register(CategoryScale);
+  if (loading) {
+    return <div>Loading...</div>
+  }
 
+  if(!data) {
+    return <div>Please Log In</div>
+  }
 
   return (
     <div className="hero is-fullheight has-background-warning-light">
@@ -14,8 +21,8 @@ Chart.register(CategoryScale);
         <div className="container">
           <div className="is-centered">
             <p className="title">Thank you for playing</p>
-            <p className="subtitle">Small subtitle</p>
-            <BarChart width="400" height="400"/>
+            <p className="subtitle">Here are your stats, {data.me.username}</p>
+            <BarChart width="400" height="400" />
           </div>
         </div>
       </div>
@@ -24,4 +31,3 @@ Chart.register(CategoryScale);
 }
 
 export default EndScreen;
-
