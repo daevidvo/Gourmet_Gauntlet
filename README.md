@@ -6,8 +6,13 @@
 | ------------- |:-------------:| 
 | JavaScript | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)|   
 | Git | [https://git-scm.com/](https://git-scm.com/) |
-| Node.js | [https://nodejs.org/en](https://nodejs.org/en) |
-| inquirer | [https://www.npmjs.com/package/inquirer](https://www.npmjs.com/package/inquirer) |
+| React | [https://react.dev/](https://react.dev/) |
+| MongoDB | [https://www.mongodb.com/](https://www.mongodb.com/) |
+| Mongoose | [https://mongoosejs.com/docs/](https://mongoosejs.com/docs/) |
+| GraphQL | [https://graphql.org/](https://graphql.org/) |
+| Bulma CSS | [https://bulma.io/](https://bulma.io/) |
+| ChartJS | [https://www.chartjs.org/](https://www.chartjs.org/) |
+| AnimeJS | [https://animejs.com/](https://animejs.com/) |
 
 <hr>
 
@@ -38,16 +43,39 @@
 
 ## Learning Points 
 
-Below are the following topics/methods that learned through this project:
+Below are the following topics/methods learned through this project:
 
- * [Node.js](https://nodejs.org/en)
- * [NPM](https://www.npmjs.com/)
+| Topic         | Resource URL           | 
+| ------------- |:-------------:| 
+| JavaScript | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)|   
+| Git | [https://git-scm.com/](https://git-scm.com/) |
+| React | [https://react.dev/](https://react.dev/) |
+| MongoDB | [https://www.mongodb.com/](https://www.mongodb.com/) |
+| Mongoose | [https://mongoosejs.com/docs/](https://mongoosejs.com/docs/) |
+| GraphQL | [https://graphql.org/](https://graphql.org/) |
+| Bulma CSS | [https://bulma.io/](https://bulma.io/) |
+| ChartJS | [https://www.chartjs.org/](https://www.chartjs.org/) |
+| AnimeJS | [https://animejs.com/](https://animejs.com/) |
 
 
 <hr>
 
 ## Author Info
 
+### Bryan Nguyen
+
+* [LinkedIn]()
+* [Github]()
+
+### David Chung
+
+* [LinkedIn]()
+* [Github]()
+
+### David Vo
+
+* [LinkedIn]()
+* [Github]()
 
 ### Jedd Javier
 
