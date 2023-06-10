@@ -47,13 +47,13 @@ const HomePage = () => {
 
     return loggedIn ? (
       <>
-        <p className="title is-4">Welcome, {user}!</p>
+        <p className="title is-4" style={{zIndex: 2}}>Welcome, {user}!</p>
         <Link to="/battle" className="button is-warning is-large">
           Battle
         </Link>
       </>
     ) : (
-      <Link to="/login" className="button is-warning is-large">
+      <Link to="/login" className="button is-warning is-large" style={{zIndex: 2}}>
         Login/Signup
       </Link>
     );
