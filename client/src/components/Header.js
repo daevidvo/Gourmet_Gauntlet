@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import Auth from "../utils/auth";
 
-const G = require('../assets/G.png');
-const GGName = require('../assets/GGname.png');
+const G = require("../assets/G.png");
 
 function Header() {
   const logout = (event) => {
@@ -16,14 +15,10 @@ function Header() {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/">
-            <img
-                src={G}
-                width="100"
-                height="100"
-            />
+          <img src={G} width="100" height="100" alt="Gourmet Gauntlet mini logo"/>
         </Link>
 
-        <a
+        <button
           role="button"
           className="navbar-burger"
           aria-label="menu"
@@ -33,7 +28,7 @@ function Header() {
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </button>
       </div>
 
       <div id="navbarBasicExample" className="navbar-menu">
@@ -44,6 +39,8 @@ function Header() {
           <a
             className="navbar-item"
             href="https://github.com/daevidvo/Gourmet_Gauntlet"
+            target="_blank"
+            rel="noreferrer"
           >
             Documentation
           </a>

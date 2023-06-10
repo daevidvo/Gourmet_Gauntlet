@@ -2,8 +2,9 @@ import { Bar } from "react-chartjs-2";
 import { useQuery } from "@apollo/client";
 import { GET_PLAYER_STATS } from "../utils/queries";
 
-const BarChart = ({ chartData }) => {
+const BarChart = () => {
   const { loading, data } = useQuery(GET_PLAYER_STATS);
+  
   if (loading) {
     return <div>Loading...</div>;
   }
