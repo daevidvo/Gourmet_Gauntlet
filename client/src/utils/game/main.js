@@ -96,108 +96,108 @@ export default async function playGame() {
 
     // battle itself
     function round() {
-            const playerHand = document.getElementById('playerHand');
+        const playerHand = document.getElementById('playerHand');
 
-            // removes all of the elements in the playerHand
-            while (playerHand.children[0]) {
-                playerHand.children[0].remove();
+        // removes all of the elements in the playerHand
+        while (playerHand.children[0]) {
+            playerHand.children[0].remove();
+        }
+
+        let attackInterval = setInterval(() => {
+            // grab the first card from the enemy's and player's hand and their associated values
+            const enemyCard = document.getElementById('enemyField').children[0];
+            const playerCard = document.getElementById('cardField').children[0];
+
+            // player lose or tie case
+            if (!playerCard || (!playerCard && !enemyCard)) {
+                playerHealth--;
+
+                console.log('player loses');
+                clearInterval(attackInterval);
+
+                deleteGameButton();
+                createModal('YOU LOST :(', gameView);
+                showModal();
+                // call playGame again
+                setTimeout(() => {
+                    closeModal();
+                    playGame();
+                }, 2000);
+                return;
             }
 
-            let attackInterval = setInterval(() => {
-                // grab the first card from the enemy's and player's hand and their associated values
-                const enemyCard = document.getElementById('enemyField').children[0];
-                const playerCard = document.getElementById('cardField').children[0];
+            // player win case
+            if (!enemyCard && playerCard) {
+                console.log('player wins');
+                currStage++;
+                deleteGameButton();
+                clearInterval(attackInterval);
+                createModal('YOU WON :)', gameView);
+                showModal();
+                setTimeout(() => {
+                    closeModal();
+                    playGame();
+                }, 2000);
 
-                // player lose or tie case
-                if (!playerCard || (!playerCard && !enemyCard)) {
-                    playerHealth--;
+                return;
+            }
 
-                    console.log('player loses');
-                    clearInterval(attackInterval);
+            // DOM traversal to grab player and enemy health/attack
+            let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1];
+            let enemyCardHealth = enemyCardHealthTextContent.textContent;;
+            enemyCardHealth = enemyCardHealth.split(' ');
+            enemyCardHealth = enemyCardHealth[1];
+            enemyCardHealth = Number(enemyCardHealth);
+            console.log('enemy card health ', enemyCardHealth)
 
-                    deleteGameButton();
-                    createModal('YOU LOST :(', gameView);
-                    showModal();
-                    // call playGame again
-                    setTimeout(() => {
-                        closeModal();
-                        playGame();
-                    }, 2000);
-                    return;
-                }
+            let enemyCardAttackTextContent = enemyCard.children[1].children[1].textContent;
+            let enemyCardAttack = enemyCardAttackTextContent;
+            enemyCardAttack = enemyCardAttack.split(' ');
+            enemyCardAttack = enemyCardAttack[1];
+            enemyCardAttack = Number(enemyCardAttack);
 
-                // player win case
-                if (!enemyCard && playerCard) {
-                    console.log('player wins');
-                    currStage++;
-                    deleteGameButton();
-                    clearInterval(attackInterval);
-                    createModal('YOU WON :)', gameView);
-                    showModal();
-                    setTimeout(() => {
-                        closeModal();
-                        playGame();
-                    }, 2000);
+            let playerCardHealthTextContent = playerCard.children[1].children[0].children[0].children[1];
+            let playerCardHealth = playerCardHealthTextContent.textContent;
+            playerCardHealth = playerCardHealth.split(' ');
+            playerCardHealth = playerCardHealth[1];
+            playerCardHealth = Number(playerCardHealth);
+            console.log('player card health ', playerCardHealth)
 
-                    return;
-                }
+            let playerCardAttackTextContent = playerCard.children[1].children[1].textContent;
+            let playerCardAttack = playerCardAttackTextContent;
+            playerCardAttack = playerCardAttack.split(' ');
+            playerCardAttack = playerCardAttack[1];
+            playerCardAttack = Number(playerCardAttack);
 
-                // DOM traversal to grab player and enemy health/attack
-                let enemyCardHealthTextContent = enemyCard.children[1].children[0].children[0].children[1];
-                let enemyCardHealth = enemyCardHealthTextContent.textContent;;
-                enemyCardHealth = enemyCardHealth.split(' ');
-                enemyCardHealth = enemyCardHealth[1];
-                enemyCardHealth = Number(enemyCardHealth);
-                console.log('enemy card health ', enemyCardHealth)
+            animateCardHit(playerCard, enemyCard);
 
-                let enemyCardAttackTextContent = enemyCard.children[1].children[1].textContent;
-                let enemyCardAttack = enemyCardAttackTextContent;
-                enemyCardAttack = enemyCardAttack.split(' ');
-                enemyCardAttack = enemyCardAttack[1];
-                enemyCardAttack = Number(enemyCardAttack);
+            playerCardHealth = playerCardHealth - enemyCardAttack;
+            // shout out david chung for solving mega game breaking bug in this single line of code
+            enemyCardHealth = enemyCardHealth - playerCardAttack;
+            console.log('player attack')
+            console.log('enemy attack')
 
-                let playerCardHealthTextContent = playerCard.children[1].children[0].children[0].children[1];
-                let playerCardHealth = playerCardHealthTextContent.textContent;
-                playerCardHealth = playerCardHealth.split(' ');
-                playerCardHealth = playerCardHealth[1];
-                playerCardHealth = Number(playerCardHealth);
-                console.log('player card health ', playerCardHealth)
+            // sometimes Number() will randomly pop out a NaN during early development so this is why we have both falsy and < 1 checkers
+            if (!enemyCardHealth || enemyCardHealth < 1) {
+                setTimeout(() => {
+                    enemyCard.remove();
+                }, 500);
+            }
 
-                let playerCardAttackTextContent = playerCard.children[1].children[1].textContent;
-                let playerCardAttack = playerCardAttackTextContent;
-                playerCardAttack = playerCardAttack.split(' ');
-                playerCardAttack = playerCardAttack[1];
-                playerCardAttack = Number(playerCardAttack);
+            if (!playerCardHealth || playerCardHealth < 1) {
+                setTimeout(() => {
+                    playerCard.remove();
+                }, 500);
+            }
 
-                animateCardHit(playerCard, enemyCard);
+            console.log('enemy card ', enemyCardHealth, enemyCardAttack);
+            console.log('player card ', playerCardHealth, playerCardAttack);
 
-                playerCardHealth = playerCardHealth - enemyCardAttack;
-                // shout out david chung for solving mega game breaking bug in this single line of code
-                enemyCardHealth = enemyCardHealth - playerCardAttack;
-                console.log('player attack')
-                console.log('enemy attack')
+            // updating cards to reflect dmg/health
+            playerCardHealthTextContent.textContent = "Health: " + playerCardHealth;
+            enemyCardHealthTextContent.textContent = "Health: " + enemyCardHealth;
 
-                // sometimes Number() will randomly pop out a NaN during early development so this is why we have both falsy and < 1 checkers
-                if (!enemyCardHealth || enemyCardHealth < 1) {
-                    setTimeout(() => {
-                        enemyCard.remove();
-                    }, 500);
-                }
-
-                if (!playerCardHealth || playerCardHealth < 1) {
-                    setTimeout(() => {
-                        playerCard.remove();
-                    }, 500);
-                }
-
-                console.log('enemy card ', enemyCardHealth, enemyCardAttack);
-                console.log('player card ', playerCardHealth, playerCardAttack);
-
-                // updating cards to reflect dmg/health
-                playerCardHealthTextContent.textContent = "Health: " + playerCardHealth;
-                enemyCardHealthTextContent.textContent = "Health: " + enemyCardHealth;
-
-            }, 1500);
+        }, 1500);
     }
 
     document.getElementById('roundStartButton').addEventListener('click', () => {
