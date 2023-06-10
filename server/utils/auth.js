@@ -3,7 +3,6 @@ require('dotenv').config()
 
 // set token secret and expiration date
 const secret = `${process.env.GG_SECRET}`;
-console.log(secret)
 const expiration = "2h";
 
 module.exports = {

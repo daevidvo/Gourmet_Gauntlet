@@ -26,7 +26,6 @@ const resolvers = {
   },
   Mutation: {
     login: async (parent, { email, password }) => {
-      console.log("hi");
       const user = await User.findOne({ email });
 
       console.log(user);
@@ -46,6 +45,7 @@ const resolvers = {
     },
     signUp: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
+      await Stats.create({userId: user._id})
       const token = signToken(user);
       return { token, user };
     },
