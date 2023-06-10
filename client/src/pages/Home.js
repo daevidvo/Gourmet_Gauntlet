@@ -26,7 +26,7 @@ const HomePage = () => {
       targets: fireRef.current,
       opacity: [0, 1],
       loop: true,
-      duration: 1000,
+      duration: 1500,
       easing: 'linear',
       direction: 'alternate'
     });
