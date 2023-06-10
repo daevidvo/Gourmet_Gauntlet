@@ -144,8 +144,8 @@ Below are the following topics/methods learned through this project:
 
 ### Bryan Nguyen
 
-* [LinkedIn]()
-* [Github]()
+* [LinkedIn](https://www.linkedin.com/in/bryannguyen9/)
+* [Github](https://github.com/bryannguyen9)
 
 ### David Chung
 
