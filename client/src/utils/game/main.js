@@ -78,7 +78,7 @@ export default async function playGame() {
 
     async function drawPhase() {
         // create the cards and puts it into the playerHandDiv
-        let handArr = await drawCards();
+        let handArr = await drawCards(currStage);
         createCardElements(handArr, document.getElementById('playerHand'), 'playerHandCard');
 
         // event listeners for moving the cards to the field
