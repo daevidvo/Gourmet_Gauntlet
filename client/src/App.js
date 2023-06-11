@@ -19,7 +19,7 @@ import Profile from "./pages/Profile";
 import AboutUs from "./pages/AboutUs";
 import SignUp from "./pages/Signup";
 import Battle from "./pages/Battle";
-import EndScreen from "./components/EndScreen";
+import EndScreen from "./pages/EndScreen";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";

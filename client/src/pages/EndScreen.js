@@ -1,6 +1,6 @@
 import React from "react";
 import "chart.js/auto";
-import BarChart from "./barChart";
+import BarChart from "../components/barChart";
 import { useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 
