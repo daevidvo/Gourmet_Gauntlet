@@ -23,6 +23,17 @@ export default async function playGame() {
 
     // if player's health is less than 0, then we'd reroute them to the gameover page
     if (!playerHealth) {
+        fetch('/api/players/', {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: localStorage.getItem('id_token'),
+                condition: 'loss'
+            })
+        }).catch((err) => console.error(err))
+
         createModal('NO MORE LIVES!!!', gameView);
         showModal();
         setTimeout(() => {
@@ -129,6 +140,18 @@ export default async function playGame() {
             // player win case
             if (!enemyCard && playerCard) {
                 console.log('player wins');
+
+                fetch('/api/players/', {
+                    method: 'PUT',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        token: localStorage.getItem('id_token'),
+                        condition: 'win'
+                    })
+                }).catch((err) => console.error(err))
+
                 currStage++;
                 deleteGameButton();
                 clearInterval(attackInterval);
