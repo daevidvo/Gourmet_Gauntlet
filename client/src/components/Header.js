@@ -54,13 +54,22 @@ function Header() {
           </a>
           {Auth.loggedIn() && (
             <>
-              <Link to="/profile" className="navbar-item">
-                Profile
-              </Link>
+            {width < 1024 && (
+              <>
+
+                <Link to="/profile" className="navbar-item">
+                  Profile
+                </Link>
+
+
               <a className="navbar-item" onClick={logout}>
                 Logout
               </a>
-            </>
+
+                </>
+            )}
+              </>
+           
           )}
         </div>
 
@@ -71,11 +80,25 @@ function Header() {
                 <Link to="/signup" className="button is-danger">
                   <strong>Sign Up</strong>
                 </Link>
-                <Link to="/login" className="button is-light">
+                <Link to="/login" className="button is-success">
                   Log In
                 </Link>
               </div>
             </div>
+          )}
+          {Auth.loggedIn() && width >= 1024 && (
+            <>
+
+            <Link to="/profile" className="navbar-item">
+                  Profile
+                </Link>
+
+
+              <a className="navbar-item" onClick={logout}>
+                Logout
+              </a>
+
+              </>
           )}
         </div>
       </div>
