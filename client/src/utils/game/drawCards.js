@@ -42,14 +42,14 @@ export default async function drawCards(stageNum) {
       break;
     case stageNum >= 3 && stageNum <= 5:
       for (let x = 0; x < 5; x += 1) {
-        let randomNum = 15 + Math.floor(Math.random() * 12);
+        let randomNum = 15 + Math.floor(Math.random() * 13);
     
         handArr.push(cardsArray[randomNum]);
       }
       break;
     case stageNum >= 6:
       for (let x = 0; x < 5; x += 1) {
-        let randomNum = 27 + Math.floor(Math.random() * 13);
+        let randomNum = 27 + Math.floor(Math.random() * 15);
     
         handArr.push(cardsArray[randomNum]);
       }
