@@ -23,6 +23,8 @@ export default async function playGame() {
 
     // if player's health is less than 0, then we'd reroute them to the gameover page
     if (!playerHealth) {
+        fetch('/api/players/')
+
         createModal('NO MORE LIVES!!!', gameView);
         showModal();
         setTimeout(() => {
