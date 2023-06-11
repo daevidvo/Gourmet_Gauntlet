@@ -28,7 +28,6 @@ const HomePage = () => {
       loop: true,
       duration: 1500,
       easing: 'linear',
-      direction: 'alternate'
     });
 
     return () => {
@@ -48,20 +47,20 @@ const HomePage = () => {
 
     return loggedIn ? (
       <>
-        <p className="title is-4" style={{zIndex: 2}}>Welcome, {user}!</p>
-        <Link to="/battle" className="button is-warning is-large">
+        <p className="title is-4" style={{position: 'relative', zIndex: 1}}>Welcome, {user}!</p>
+        <Link to="/battle" className="button is-warning is-large" style={{zIndex: 2}}>
           Battle
         </Link>
       </>
     ) : (
-      <Link to="/login" className="button is-warning is-large" style={{zIndex: 2}}>
+      <Link to="/login" className="button is-warning is-large" style={{zIndex: 1}}>
         Login/Signup
       </Link>
     );
   };
 
   return (
-    <section className="hero is-danger is-fullheight">
+    <section className="hero is-danger is-fullheight" style={{zIndex: -1}}>
       <div className="hero-body">
         <div className="container has-text-centered">
           <h1
