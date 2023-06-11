@@ -23,7 +23,12 @@ function Header() {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/">
-          <img src={G} width="100" height="100" alt="Gourmet Gauntlet mini logo" />
+          <img
+            src={G}
+            width="100"
+            height="100"
+            alt="Gourmet Gauntlet mini logo"
+          />
         </Link>
 
         <button
@@ -39,7 +44,10 @@ function Header() {
         </button>
       </div>
 
-      <div id="navbarBasicExample" className={`navbar-menu ${isActive ? "is-active" : ""}`}>
+      <div
+        id="navbarBasicExample"
+        className={`navbar-menu ${isActive ? "is-active" : ""}`}
+      >
         <div className="navbar-start">
           <Link className="navbar-item" to="/">
             Home
@@ -54,22 +62,18 @@ function Header() {
           </a>
           {Auth.loggedIn() && (
             <>
-            {width < 1024 && (
-              <>
+              {width < 1024 && (
+                <>
+                  <Link to="/profile" className="navbar-item">
+                    Profile
+                  </Link>
 
-                <Link to="/profile" className="navbar-item">
-                  Profile
-                </Link>
-
-
-              <a className="navbar-item" onClick={logout}>
-                Logout
-              </a>
-
+                  <a className="navbar-item" onClick={logout}>
+                    Logout
+                  </a>
                 </>
-            )}
-              </>
-           
+              )}
+            </>
           )}
         </div>
 
@@ -80,25 +84,24 @@ function Header() {
                 <Link to="/signup" className="button is-danger">
                   <strong>Sign Up</strong>
                 </Link>
-                <Link to="/login" className="button is-success">
+                <Link to="/login" className="button">
                   Log In
                 </Link>
               </div>
             </div>
           )}
           {Auth.loggedIn() && width >= 1024 && (
-            <>
-
-            <Link to="/profile" className="navbar-item">
+            <div className="navbar-item">
+              <div className="buttons">
+                <Link to="/profile" className="button is-danger">
                   Profile
                 </Link>
 
-
-              <a className="navbar-item" onClick={logout}>
-                Logout
-              </a>
-
-              </>
+                <a className="button" onClick={logout}>
+                  Logout
+                </a>
+              </div>
+            </div>
           )}
         </div>
       </div>
