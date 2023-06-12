@@ -38,6 +38,8 @@ export default async function playGame() {
         showModal();
         setTimeout(() => {
             closeModal();
+            currStage = 1;
+            playerHealth = 5;
             window.history.pushState({}, "", "/gameover");
         }, 2000)
         return;
