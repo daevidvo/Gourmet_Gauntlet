@@ -38,7 +38,7 @@ export default async function playGame() {
         showModal();
         setTimeout(() => {
             closeModal();
-            window.location.assign('/');
+            window.location.href('/gameover');
         }, 2000)
         return;
     }
@@ -61,7 +61,7 @@ export default async function playGame() {
         showModal();
         setTimeout(() => {
             closeModal();
-            window.location.assign('/gameover');
+            window.location.href('/gameover');
         }, 2000)
         return;
     }
