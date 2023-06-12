@@ -40,6 +40,30 @@ export default async function playGame() {
             closeModal();
             window.location.assign('/gameover');
         }, 2000)
+        return;
+    }
+
+    // if the current stage is more then however any enemies we have, then the player has won the game.
+    if (currStage > enemyData.length) {
+        // updates player stats
+        fetch('/api/players/', {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                token: localStorage.getItem('id_token'),
+                condition: 'win'
+            })
+        }).catch((err) => console.error(err))
+
+        createModal('YOU WON THE GAME!!!', gameView);
+        showModal();
+        setTimeout(() => {
+            closeModal();
+            window.location.assign('/gameover');
+        }, 2000)
+        return;
     }
 
     const br = document.createElement('br');
@@ -140,18 +164,7 @@ export default async function playGame() {
             // player win case
             if (!enemyCard && playerCard) {
                 console.log('player wins');
-
-                fetch('/api/players/', {
-                    method: 'PUT',
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        token: localStorage.getItem('id_token'),
-                        condition: 'win'
-                    })
-                }).catch((err) => console.error(err))
-
+                
                 currStage++;
                 deleteGameButton();
                 clearInterval(attackInterval);
