@@ -20,7 +20,7 @@
 
 Gourmet Gauntlet is a auto-battler-card-game that randomly generates cards for the user to select to battle through stages of enemies. 
 
-`TODO: ADD GIF HERE`
+![gourmet gauntlet game](./assets/images/game_example.gif)
 
 <hr>
 
@@ -35,7 +35,36 @@ Gourmet Gauntlet is a auto-battler-card-game that randomly generates cards for t
 
 ## Code Sample
 
-### React: Signup and Login
+### React: Sign up and Log in pages
+
+The code snippet below is examples of how we used React to render our web pages.
+
+```js
+
+// starting at our App.js that allows our web pages to 
+function App() {
+  return (
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/battle" element={<Battle />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/gameover" element={<EndScreen />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </ApolloProvider>
+  );
+}
+
+```
 
 `TODO: ADD CODE SNIPPET HERE
 `
@@ -149,13 +178,13 @@ Below are the following topics/methods learned through this project:
 
 ### David Chung
 
-* [LinkedIn]()
-* [Github]()
+* [LinkedIn](https://www.linkedin.com/in/david-chung-77141526b/)
+* [Github](https://github.com/dchung13)
 
 ### David Vo
 
-* [LinkedIn]()
-* [Github]()
+* [LinkedIn](https://www.linkedin.com/in/daevidvo)
+* [Github](https://wwww.github.com/daevidvo)
 
 ### Jedd Javier
 
