@@ -38,7 +38,7 @@ export default async function playGame() {
         showModal();
         setTimeout(() => {
             closeModal();
-            window.location.assign('/gameover');
+            window.location.assign('/');
         }, 2000)
         return;
     }
