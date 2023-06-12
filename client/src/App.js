@@ -16,7 +16,6 @@ import "bulma/css/bulma.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import AboutUs from "./pages/AboutUs";
 import SignUp from "./pages/Signup";
 import Battle from "./pages/Battle";
 import EndScreen from "./pages/EndScreen";
@@ -55,7 +54,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/about-us" element={<AboutUs />} />
             <Route path="/gameover" element={<EndScreen />} />
           </Routes>
           <Footer />
