@@ -40,7 +40,7 @@ export default async function playGame() {
             closeModal();
             currStage = 1;
             playerHealth = 5;
-            window.history.pushState({}, "", "/gameover");
+            window.location.assign('/gameover');
         }, 2000)
         return;
     }
@@ -63,7 +63,7 @@ export default async function playGame() {
         showModal();
         setTimeout(() => {
             closeModal();
-            window.history.pushState({}, "", "/gameover");
+            window.location.assign('/gameover');
         }, 2000)
         return;
     }
