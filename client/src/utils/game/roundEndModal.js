@@ -15,7 +15,6 @@ export default function createModal(text, parentElement) {
     const modalContent = document.createElement('h1');
 
     modalContent.textContent = text;
-
     modalCardBody.append(modalContent);
     modalCard.append(modalCardBody);
     modal.append(modalBack, modalCard);
