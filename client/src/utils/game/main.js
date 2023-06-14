@@ -10,9 +10,12 @@ import displayCardOnField from "./displayCardOnField";
 import selectCard from "./selectCard";
 import animateCardHit from "./animateCardHit";
 import createGameButtons from "./createGameButtons";
+import generatePlayerHand from "./generatePlayerHand";
 
 let currStage = 1;
 let playerHealth = 5;
+
+const cardsArray = await drawCards();
 
 export default async function playGame() {
 
@@ -104,7 +107,7 @@ export default async function playGame() {
 
     async function drawPhase() {
         // create the cards and puts it into the playerHandDiv
-        let handArr = await drawCards(currStage);
+        let handArr = generatePlayerHand(currStage, cardsArray)
         createCardElements(handArr, document.getElementById('playerHand'), 'playerHandCard');
 
         // event listeners for moving the cards to the field
