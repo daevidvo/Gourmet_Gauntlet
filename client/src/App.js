@@ -47,16 +47,16 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <Routes>
           <Header />
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/battle" element={<Battle />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/gameover" element={<EndScreen />} />
-          <Footer />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
