@@ -36,10 +36,19 @@ const startApolloServer = async () => {
     server.applyMiddleware({ app });
 
     db.once('open', () => {
-        app.listen(PORT, () => {
+        const server = app.listen(PORT, () => {
             console.log(`🌍 Now listening on localhost:${PORT}`);
             console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
         })
+
+        const io = require('socket.io')(server);
+
+        io.on("connection", (socket) => {
+            console.log("connection initiated");
+            socket.on("chat_message", (msg) => {
+                io.emit("chat_message", msg);
+            });
+        });
     })
 };
 
