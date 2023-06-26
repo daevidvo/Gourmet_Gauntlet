@@ -19,6 +19,10 @@ function Header() {
     Auth.logout();
   };
 
+  const openChat = () => {
+    document.getElementById("chatBox").classList.add("is-active");
+  }
+
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -52,6 +56,9 @@ function Header() {
           <Link className="navbar-item" to="/">
             Home
           </Link>
+          <a className="navbar-item" id="openChatButton" onClick={openChat}>
+            Chat
+          </a>
           <a
             className="navbar-item"
             href="https://github.com/daevidvo/Gourmet_Gauntlet"
