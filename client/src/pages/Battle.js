@@ -39,7 +39,7 @@ Post-battle:
 
 const Battle = () => {
   return (
-    <div id="battle" className="hero is-fullheight">
+    <div id={`${true ? "battle-dark" : "battle"}`} className="hero is-fullheight">
         <div className="buttons is-centered">
             <button className="button is-danger is-large mt-4" id="playButton" onClick={playGame}>Play</button>
         </div>

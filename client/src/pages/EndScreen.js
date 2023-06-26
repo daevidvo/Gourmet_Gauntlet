@@ -16,7 +16,7 @@ function EndScreen() {
   }
 
   return (
-    <div className="hero is-fullheight has-background-warning-light">
+    <div className={`hero is-fullheight ${true ? "is-dark" : "has-background-warning-light"}`}>
       <div className="hero-body">
         <div className="container">
           <div className="is-centered">

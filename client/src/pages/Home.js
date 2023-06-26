@@ -60,7 +60,7 @@ const HomePage = () => {
   };
 
   return (
-    <section className="hero is-danger is-fullheight" style={{zIndex: -1}}>
+    <section className={`hero is-fullheight ${true ? "is-dark" : "is-danger"}`} style={{zIndex: -1}}>
       <div className="hero-body">
         <div className="container has-text-centered">
           <h1
