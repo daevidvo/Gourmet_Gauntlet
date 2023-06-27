@@ -22,10 +22,6 @@ function Header() {
 
   const isDark = useContext(ThemeContext);
 
-  const openChat = () => {
-    document.getElementById("chatBox").classList.add("is-active");
-  }
-
   return (
     <nav className={`navbar ${isDark ? "is-dark" : ""}`} role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -59,9 +55,9 @@ function Header() {
           <Link className="navbar-item" to="/">
             Home
           </Link>
-          <a className="navbar-item" id="openChatButton" onClick={openChat}>
+          <Link className="navbar-item" to="/chat">
             Chat
-          </a>
+          </Link>
           <a
             className="navbar-item"
             href="https://github.com/daevidvo/Gourmet_Gauntlet"

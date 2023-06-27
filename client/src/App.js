@@ -19,7 +19,7 @@ import Profile from "./pages/Profile";
 import SignUp from "./pages/Signup";
 import Battle from "./pages/Battle";
 import EndScreen from "./pages/EndScreen";
-
+import { ChatForm } from "./pages/ChatForm";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
@@ -60,6 +60,7 @@ function App() {
                 <Route path="/profile" element={<Profile changeTheme={changeTheme} />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/gameover" element={<EndScreen />} />
+                <Route path="/chat" element={<ChatForm/>} />
             </Routes>
             <Footer />
             </div>
