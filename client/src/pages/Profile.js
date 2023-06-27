@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
@@ -7,8 +7,9 @@ import createModal from "../utils/game/roundEndModal";
 import closeModal from "../utils/game/closeModal";
 import "chart.js";
 import BarChart from "../components/barChart";
+import { ThemeContext } from "../utils/context/ThemeContext";
 
-function Profile() {
+function Profile(props) {
   const { loading, data: getMeData } = useQuery(GET_ME);
   const username = getMeData?.me?.username;
   const email = getMeData?.me?.email;
@@ -50,8 +51,10 @@ function Profile() {
     }
   };
 
+  const isDark = useContext(ThemeContext);
+
   return (
-    <section className={`section ${true ? "has-background-dark" : ""}`}>
+    <section className={`section ${isDark ? "has-background-dark" : ""}`}>
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-8">
@@ -108,6 +111,15 @@ function Profile() {
                         {error.message}
                       </div>
                     )}
+                  </div>
+                  <div className="card-footer has-text-light">
+                    <div className="card-footer-item">
+                        <button className={`button ${isDark ? "is-light" : "is-dark"}`}
+                                onClick={() => props.changeTheme(!isDark)}
+                        >
+                            Change Theme
+                        </button>
+                    </div>
                   </div>
                 </>
               )}
