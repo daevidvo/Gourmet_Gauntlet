@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../utils/context/ThemeContext";
 
 function Footer() {
+  const isDark = useContext(ThemeContext);
+
   return (
-    <footer className="footer is-fixed-bottom">
+    <footer className={`footer is-fixed-bottom ${isDark ? "has-background-dark has-text-light" : ""}`}>
       <div className="content has-text-centered">
         <span>
           <p style={{ display: `inline` }}>
-            <strong>Gourmet Gauntlet</strong> by{" "}
+            <strong className={` ${true ? "has-text-light" : ""}`}>Gourmet Gauntlet</strong> by{" "}
           </p>
           <a
             href="https://github.com/daevidvo "

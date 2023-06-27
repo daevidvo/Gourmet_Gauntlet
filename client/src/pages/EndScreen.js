@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import "chart.js/auto";
 import BarChart from "../components/barChart";
 import { useQuery } from "@apollo/client";
 import { GET_ME } from "../utils/queries";
+import { ThemeContext } from "../utils/context/ThemeContext";
 
 function EndScreen() {
   const { loading, data } = useQuery(GET_ME);
+
+  const isDark = useContext(ThemeContext);
 
   if (loading) {
     return <div>Loading...</div>
@@ -16,7 +19,7 @@ function EndScreen() {
   }
 
   return (
-    <div className="hero is-fullheight has-background-warning-light">
+    <div className={`hero is-fullheight ${isDark ? "is-dark" : "has-background-warning-light"}`}>
       <div className="hero-body">
         <div className="container">
           <div className="is-centered">

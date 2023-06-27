@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import anime from 'animejs/lib/anime.es.js';
 
 import { GET_ME } from "../utils/queries";
+import { ThemeContext } from '../utils/context/ThemeContext';
 
 const GGName = require('../assets/GGname.png');
 const fireGif = require('../assets/fire.gif');
@@ -59,8 +60,11 @@ const HomePage = () => {
     );
   };
 
+  const isDark = useContext(ThemeContext);
+//   debugger;
+
   return (
-    <section className="hero is-danger is-fullheight" style={{zIndex: -1}}>
+    <section className={`hero is-fullheight ${isDark ? "is-dark" : "is-danger"}`} style={{zIndex: -1}}>
       <div className="hero-body">
         <div className="container has-text-centered">
           <h1

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../utils/context/ThemeContext";
 
 import { useMutation } from "@apollo/client";
 import { SIGNUP_USER } from "../utils/mutations";
@@ -34,8 +35,10 @@ const Signup = () => {
     }
   };
 
+  const isDark = useContext(ThemeContext);
+
   return (
-    <section className="section">
+    <section className={`section ${isDark ? "has-background-dark" : ""}`}>
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-8">

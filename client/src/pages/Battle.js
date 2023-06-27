@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import playGame from "../utils/game/main";
+import { ThemeContext } from "../utils/context/ThemeContext";
 
 /* 
 On page load:
@@ -38,8 +39,10 @@ Post-battle:
 */
 
 const Battle = () => {
+  const isDark = useContext(ThemeContext);
+
   return (
-    <div id="battle" className="hero is-fullheight">
+    <div id={`${isDark ? "battle-dark" : "battle"}`} className="hero is-fullheight">
         <div className="buttons is-centered">
             <button className="button is-danger is-large mt-4" id="playButton" onClick={playGame}>Play</button>
         </div>
