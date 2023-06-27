@@ -35,7 +35,7 @@ const Signup = () => {
   };
 
   return (
-    <section className="section">
+    <section className={`section ${true ? "has-background-dark" : ""}`}>
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-8">
