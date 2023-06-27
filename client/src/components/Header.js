@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useWindowWidth } from "@react-hook/window-size";
+import { ThemeContext } from "../utils/context/ThemeContext";
 
 import Auth from "../utils/auth";
 
@@ -19,8 +20,10 @@ function Header() {
     Auth.logout();
   };
 
+  const isDark = useContext(ThemeContext);
+
   return (
-    <nav className={`navbar ${true ? "is-dark" : ""}`} role="navigation" aria-label="main navigation">
+    <nav className={`navbar ${isDark ? "is-dark" : ""}`} role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/">
           <img
