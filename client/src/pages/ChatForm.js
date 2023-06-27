@@ -4,6 +4,10 @@ import { ConnectionManager } from "../components/ConnectionManager";
 import { ConnectionState } from "../components/ConnectionState";
 import { Chats } from "../components/Chats";
 
+// TODO: make it so that the chat will automatically scroll to the bottom
+// TODO: style the form so it doesn't look ugly
+// TODO: grab the username of the user and append it to the msg
+
 export function ChatForm() {
     const [formState, setFormState] = useState("");
     const [isLoading, setIsLoading] = useState(false); 
