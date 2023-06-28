@@ -41,9 +41,13 @@ const startApolloServer = async () => {
             console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
         })
 
-        const io = require('socket.io')(server);
+        const io = require('socket.io')(server, {
+            cors: {
+                origin: "http://localhost:3000"
+            }            
+        });
 
-        io.on("connection", (socket) => {
+        io.on("connect", (socket) => {
             console.log("connection initiated");
             socket.on("chat_message", (msg) => {
                 io.emit("chat_message", msg);
