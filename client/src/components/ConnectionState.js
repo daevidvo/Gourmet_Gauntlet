@@ -1,5 +1,9 @@
 import React from "react";
 
 export function ConnectionState({isConnected}) {
-    return <p>State: {"" + isConnected}</p>;
+    if(isConnected) {
+        return <p>Connected to chat</p>
+    } else {
+        return <p>Disconnected from chat</p>
+    }
 }

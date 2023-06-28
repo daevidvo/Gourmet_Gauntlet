@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { socket } from "../socket";
-import { ConnectionManager } from "../components/ConnectionManager";
 import { ConnectionState } from "../components/ConnectionState";
 import { Chats } from "../components/Chats";
+import { GET_ME } from "../utils/queries";
+import { useQuery } from "@apollo/client";
 
 // TODO: make it so that the chat will automatically scroll to the bottom
 // TODO: style the form so it doesn't look ugly
-// TODO: grab the username of the user and append it to the msg
 
 export function ChatForm() {
     const [formState, setFormState] = useState("");
     const [isLoading, setIsLoading] = useState(false); 
+
+    const { loading, data } = useQuery(GET_ME);
+    const username = data?.me?.username;
 
     function submitChatForm(e) {
         e.preventDefault();
         setIsLoading(true);
 
         // prevents the user from sending messages for one second
-        socket.timeout(1000).emit('chat_message', formState, () => {
+        // use the formatted string to add the username to the message without directly changing formState
+        socket.timeout(1000).emit('chat_message', `${username}: ${formState}`, () => {
             setIsLoading(false);
         });
-        
+        setFormState("");
     }
 
     const [isConnected, setIsConnected] = useState(socket.connected);
@@ -49,17 +53,36 @@ export function ChatForm() {
         socket.on('chat_message', onChatEvent);
     }, []);
 
+    function connect() {
+        socket.connect();
+    }
+
+    function disconnect() {
+        socket.disconnect();
+    }
+
+    if(loading) {
+        return <p>Loading...</p>
+    }
+
     return (
-        <div>
-            <ConnectionState isConnected={isConnected} />
-            {/* passes the new chats to the Chats component to be displayed */}
-            <Chats events={chatEvents} />
-            {/* connect and disconnect buttons */}
-            <ConnectionManager />
-            <form onSubmit={submitChatForm}>
-                <input onChange={e => setFormState(e.target.value)}/>
-                <button type="submit" disabled={ isLoading }>Send</button>
-            </form>
+        <div className="columns is-centered">
+            <div className="column is-half">
+                <ConnectionState isConnected={isConnected} />
+                {/* passes the new chats to the Chats component to be displayed */}
+                <Chats events={chatEvents} />
+                {/* connect and disconnect buttons */}
+                <div className="field">
+                    <label className="label">Message</label>
+                    <div className="control is-4">
+                        <input className="input" type="text" value={formState} placeholder="Hello!" onChange={e => setFormState(e.target.value)}/>
+                        <button className="button is-danger mt-3" type="submit" disabled={ isLoading } onClick={submitChatForm}>Send</button>
+                        {/* only doing mx-1 on on the button below so that the side margins on the edges aren't weird looking */}
+                        <button className="button mt-3 mx-1" onClick={connect}>Connect</button>
+                        <button className="button is-dark has-text-white mt-3" onClick={disconnect}>Disconnect</button>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
