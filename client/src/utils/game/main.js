@@ -22,7 +22,12 @@ export default async function playGame() {
     // debugger;
 
     // assigning battlefield so that we can use this later on
-    const gameView = document.getElementById('battle')
+    let gameView;
+    if (!document.getElementById('battle')) {
+        gameView = document.getElementById('battle-dark')
+    } else {
+        gameView = document.getElementById('battle')
+    }
 
     // if player's health is less than 0, then we'd reroute them to the gameover page
     if (!playerHealth) {
