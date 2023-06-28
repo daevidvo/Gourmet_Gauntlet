@@ -128,7 +128,7 @@ function Profile(props) {
           <div className="column is-4">
             <div className="card">
               <header className="card-header bg-dark text-light p-2">
-                <h4 className="card-header-title">Update Profile</h4>
+                <h4 className="card-header-title">{username} Stats</h4>
               </header>
               <div className="card-content">
                 <BarChart width="400" height="400" />

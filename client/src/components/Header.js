@@ -55,9 +55,13 @@ function Header() {
           <Link className="navbar-item" to="/">
             Home
           </Link>
+          {
+          Auth.loggedIn() ? 
           <Link className="navbar-item" to="/chat">
             Chat
-          </Link>
+          </Link> : undefined
+          }
+          
           <a
             className="navbar-item"
             href="https://github.com/daevidvo/Gourmet_Gauntlet"
