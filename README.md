@@ -10,6 +10,7 @@
 | MongoDB | [https://www.mongodb.com/](https://www.mongodb.com/) |
 | Mongoose | [https://mongoosejs.com/docs/](https://mongoosejs.com/docs/) |
 | GraphQL | [https://graphql.org/](https://graphql.org/) |
+| Socket.Io | [https://socket.io/](https://socket.io/) |
 | Bulma CSS | [https://bulma.io/](https://bulma.io/) |
 | ChartJS | [https://www.chartjs.org/](https://www.chartjs.org/) |
 | AnimeJS | [https://animejs.com/](https://animejs.com/) |
